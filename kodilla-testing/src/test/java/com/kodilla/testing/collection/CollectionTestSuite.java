@@ -31,7 +31,7 @@ public class CollectionTestSuite {
 
         System.out.println("Testing empty List .. ");
 
-        Assert.assertNotNull(emptyNumbers);
+        Assert.assertEquals(numbers, emptyNumbers);
 
     }
 
@@ -39,11 +39,13 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         ArrayList<Integer> numbers = new ArrayList<>();
         ArrayList<Integer> evenNumbers = new ArrayList<>();
+        ArrayList<Integer> notEvenNumbers = new ArrayList<>();
+
 
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
 
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 20; i += 2) {
             numbers.add(i);
         }
 
@@ -51,12 +53,15 @@ public class CollectionTestSuite {
 
         System.out.println("Testing Normal List .. ");
 
-        for (Integer evenNumber : evenNumbers) {
-            if (evenNumber % 2 == 0) {
-                Assert.assertTrue(true);
-            } else
-                Assert.assertFalse(false);
+        Assert.assertEquals(numbers, evenNumbers);
+
+        for (int i = 0; i < 20; i++) {
+            numbers.add(i);
         }
+
+        notEvenNumbers = oddNumbersExterminator.exterminate(numbers);
+
+        Assert.assertNotEquals(numbers, notEvenNumbers);
 
 
     }
