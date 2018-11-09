@@ -38,31 +38,24 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
         ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> testEvenNumbers = new ArrayList<>();
         ArrayList<Integer> evenNumbers = new ArrayList<>();
-        ArrayList<Integer> notEvenNumbers = new ArrayList<>();
-
 
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
 
-
-        for (int i = 0; i < 20; i += 2) {
-            numbers.add(i);
-        }
-
-        evenNumbers = oddNumbersExterminator.exterminate(numbers);
-
-        System.out.println("Testing Normal List .. ");
-
-        Assert.assertEquals(numbers, evenNumbers);
+        System.out.println("Testing Normal List ");
 
         for (int i = 0; i < 20; i++) {
             numbers.add(i);
         }
 
-        notEvenNumbers = oddNumbersExterminator.exterminate(numbers);
+        for (int i = 0; i < 20; i += 2) {
+            evenNumbers.add(i);
+        }
 
-        Assert.assertNotEquals(numbers, notEvenNumbers);
+        testEvenNumbers = oddNumbersExterminator.exterminate(numbers);
 
+        Assert.assertEquals(evenNumbers, testEvenNumbers);
 
     }
 }
