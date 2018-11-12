@@ -105,7 +105,7 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsAndPosts = calculationsStatistics.calculateAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(1,averageCommentsAndPosts);
+        Assert.assertEquals(1, averageCommentsAndPosts);
 
         when(statistics.commentsCount()).thenReturn(80);
         when(statistics.postsCount()).thenReturn(100);
@@ -114,7 +114,7 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsAndPosts = calculationsStatistics.calculateAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(0,averageCommentsAndPosts);
+        Assert.assertEquals(0, averageCommentsAndPosts);
 
     }
 
@@ -141,7 +141,7 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsAndUsers = calculationsStatistics.calculateAverageCommentsOnUsers();
 
         //Then
-        Assert.assertEquals(1,averageCommentsAndUsers);
+        Assert.assertEquals(1, averageCommentsAndUsers);
 
     }
 
@@ -168,7 +168,7 @@ public class CalculationsStatisticsTestSuite {
         averagePostsAndUsers = calculationsStatistics.calculateAveragePostsOnUsers();
 
         //Then
-        Assert.assertEquals(0,averagePostsAndUsers);
+        Assert.assertEquals(0, averagePostsAndUsers);
 
     }
 
