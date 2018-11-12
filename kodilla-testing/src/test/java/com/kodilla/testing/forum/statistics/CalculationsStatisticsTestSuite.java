@@ -10,166 +10,74 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class CalculationsStatisticsTestSuite {
+
     @Test
-    public void testCalculatePostsCount() {
+    public void testCalculateCommentsOnPosts() {
+        int averageCommentsOnPosts;
+
         //Given
         Statistics statistics = mock(Statistics.class);
-        CalculationsStatistics calculationsStatistics = new CalculationsStatistics();
-        calculationsStatistics.calculateAdvStatistics(statistics);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
-        //Test for 1000 Posts
-        when(statistics.postsCount()).thenReturn(1000);
-
-        //When
-        int postsCount = statistics.postsCount();
-
-        //Then
-        Assert.assertEquals(1000, postsCount);
-
-        //Test for 0 Posts
         when(statistics.postsCount()).thenReturn(0);
-
-        //When
-        postsCount = statistics.postsCount();
-
-        //Then
-        Assert.assertEquals(0, postsCount);
-
-    }
-
-    @Test
-    public void testCalculateCommentsCount() {
-        //Given
-        Statistics statistics = mock(Statistics.class);
-        CalculationsStatistics calculationsStatistics = new CalculationsStatistics();
-        calculationsStatistics.calculateAdvStatistics(statistics);
-
-        //Test for 0 Comments
         when(statistics.commentsCount()).thenReturn(0);
 
+        statisticsCalculator.calculateAdvStatistics(statistics);
+
         //When
-        int commentsCount = statistics.commentsCount();
+        averageCommentsOnPosts = statisticsCalculator.getAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(0, commentsCount);
+        Assert.assertEquals(1,averageCommentsOnPosts);
 
     }
 
     @Test
-    public void testCalculateUsersCount() {
+    public void testCalculateCommentsOnUsers() {
+        int averageCommentsOnUsers;
+
         //Given
-        int usersCount;
         Statistics statistics = mock(Statistics.class);
-        CalculationsStatistics calculationsStatistics = new CalculationsStatistics();
-        calculationsStatistics.calculateAdvStatistics(statistics);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
-        List<String> listUsers = new ArrayList<>();
+        ArrayList<String> users = new ArrayList<>();
 
-        //Test for 0 Users
-        when(statistics.userNames()).thenReturn(listUsers);
+        when(statistics.userNames()).thenReturn(users);
+        when(statistics.commentsCount()).thenReturn(50);
 
-        //When
-        usersCount = calculationsStatistics.calculateUsers();
-
-        //Then
-        Assert.assertEquals(0, usersCount);
-
-
-        //Test for 100 Users
-        for (int i = 0; i < 100; i++) {
-            listUsers.add("#" + i);
-        }
-
-        when(statistics.userNames()).thenReturn(listUsers);
+        statisticsCalculator.calculateAdvStatistics(statistics);
 
         //When
-        usersCount = calculationsStatistics.calculateUsers();
+        averageCommentsOnUsers = statisticsCalculator.getAverageCommentsOnUsers();
 
         //Then
-        Assert.assertEquals(100, usersCount);
+        Assert.assertEquals(0,averageCommentsOnUsers);
+
     }
 
     @Test
-    public void testCalculateCommentsPosts() {
+    public void testCalculatePostsBiggerComment() {
+        int averageCommentsOnPosts;
+
         //Given
-        int averageCommentsAndPosts;
-
         Statistics statistics = mock(Statistics.class);
-        CalculationsStatistics calculationsStatistics = new CalculationsStatistics();
-        calculationsStatistics.calculateAdvStatistics(statistics);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
-        when(statistics.commentsCount()).thenReturn(100);
-        when(statistics.postsCount()).thenReturn(80);
-
-        //When
-        averageCommentsAndPosts = calculationsStatistics.calculateAverageCommentsOnPosts();
-
-        //Then
-        Assert.assertEquals(1, averageCommentsAndPosts);
-
-        when(statistics.commentsCount()).thenReturn(80);
+        when(statistics.commentsCount()).thenReturn(10);
         when(statistics.postsCount()).thenReturn(100);
 
+        statisticsCalculator.calculateAdvStatistics(statistics);
+
         //When
-        averageCommentsAndPosts = calculationsStatistics.calculateAverageCommentsOnPosts();
+        averageCommentsOnPosts = statisticsCalculator.getAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(0, averageCommentsAndPosts);
+        Assert.assertEquals(0,averageCommentsOnPosts);
 
     }
 
-    @Test
-    public void testCalculateCommentsUsers() {
-        //Given
-        int averageCommentsAndUsers;
 
-        List<String> listUsers = new ArrayList<>();
 
-        Statistics statistics = mock(Statistics.class);
-        CalculationsStatistics calculationsStatistics = new CalculationsStatistics();
-        calculationsStatistics.calculateAdvStatistics(statistics);
 
-        //Test for 100 Users
-        for (int i = 0; i < 100; i++) {
-            listUsers.add("#" + i);
-        }
-
-        when(statistics.userNames()).thenReturn(listUsers);
-        when(statistics.commentsCount()).thenReturn(80);
-
-        //When
-        averageCommentsAndUsers = calculationsStatistics.calculateAverageCommentsOnUsers();
-
-        //Then
-        Assert.assertEquals(1, averageCommentsAndUsers);
-
-    }
-
-    @Test
-    public void testCalculatePostsUsers() {
-        //Given
-        int averagePostsAndUsers;
-
-        List<String> listUsers = new ArrayList<>();
-
-        Statistics statistics = mock(Statistics.class);
-        CalculationsStatistics calculationsStatistics = new CalculationsStatistics();
-        calculationsStatistics.calculateAdvStatistics(statistics);
-
-        //Test for 100 Users
-        for (int i = 0; i < 80; i++) {
-            listUsers.add("#" + i);
-        }
-
-        when(statistics.userNames()).thenReturn(listUsers);
-        when(statistics.postsCount()).thenReturn(100);
-
-        //When
-        averagePostsAndUsers = calculationsStatistics.calculateAveragePostsOnUsers();
-
-        //Then
-        Assert.assertEquals(0, averagePostsAndUsers);
-
-    }
 
 }
