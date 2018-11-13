@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -28,7 +27,7 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsOnPosts = statisticsCalculator.getAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(1,averageCommentsOnPosts);
+        Assert.assertEquals(1, averageCommentsOnPosts);
 
     }
 
@@ -51,7 +50,7 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsOnUsers = statisticsCalculator.getAverageCommentsOnUsers();
 
         //Then
-        Assert.assertEquals(0,averageCommentsOnUsers);
+        Assert.assertEquals(0, averageCommentsOnUsers);
 
     }
 
@@ -72,12 +71,9 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsOnPosts = statisticsCalculator.getAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(0,averageCommentsOnPosts);
+        Assert.assertEquals(0, averageCommentsOnPosts);
 
     }
-
-
-
 
 
 }
