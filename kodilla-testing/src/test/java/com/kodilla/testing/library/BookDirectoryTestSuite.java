@@ -99,19 +99,13 @@ public class BookDirectoryTestSuite {
         //Given
         LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabase);
+        LibraryUser user = new LibraryUser("Filip","M","1111");
+        List<Book> resultListOf5Books = generateListOfNBooks(5);
 
-        List<Book> resultBookswithHandsOf = generateListOfNBooks(100);
+        bookLibrary.rentABook(user,new Book("edward","edward",11));
 
-        LibraryUser user = new LibraryUser("filip","m","1111");
+        bookLibrary.listBooksInHandsOf(user);
 
 
-
-        //when
-        when(libraryDatabase.returnBooks(user)).thenReturn(0);
-
-        int countBooks = libraryDatabase.returnBooks(user);
-
-        //Then
-        Assert.assertEquals(1,countBooks);
     }
 }
