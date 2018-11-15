@@ -20,8 +20,11 @@ import java.util.stream.Collectors;
 public class StreamMain {
     public static void main(String[] args) {
         Forum forum = new Forum();
-        Map<Integer,ForumUser> forumUsers = forum.getUserList().stream().filter(c-> c.getSex() == 'M').filter(c->c.getBirthdayDate().getYear() <= 1998).filter(c->c.getCountPosts() >= 1).collect(Collectors.toMap(ForumUser::getId,ForumUser -> ForumUser));
+        Map<Integer, ForumUser> forumUsers = forum.getUserList().stream().filter(c -> c.getSex() == 'M').filter(c -> c.getBirthdayDate().getYear() <= 1998).filter(c -> c.getCountPosts() >= 1).collect(Collectors.toMap(ForumUser::getId, ForumUser -> ForumUser));
         System.out.println(forumUsers);
+
+        forumUsers.entrySet().stream().map(entry -> entry.getKey() + "  Name: " + entry.getValue().getUserName() + " Birthday: " + entry.getValue().getBirthdayDate() + " Posts: " + entry.getValue().getCountPosts() + " Sex: " + entry.getValue().getSex() ).forEach(System.out::println);
+
 
 
 
