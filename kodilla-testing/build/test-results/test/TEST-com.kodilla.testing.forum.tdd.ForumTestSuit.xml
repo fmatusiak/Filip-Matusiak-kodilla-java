@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuit" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-11-12T10:50:00" hostname="elliot" time="0.004">
+<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuit" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-11-17T16:28:45" hostname="elliot" time="0.004">
   <properties/>
   <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.001"/>
   <testcase name="testAddPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.0"/>

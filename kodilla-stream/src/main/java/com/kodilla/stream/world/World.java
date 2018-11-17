@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 public final class World {
-    ArrayList<Continent> world = new ArrayList<>();
+    private ArrayList<Continent> world = new ArrayList<>();
 
     public World() {
         Continent continent = new Continent();

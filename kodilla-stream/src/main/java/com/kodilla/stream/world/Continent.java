@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public final class Continent {
 
-    ArrayList<Country> asia  = new ArrayList<>();
-    ArrayList<Country> africa  = new ArrayList<>();
-    ArrayList<Country> europe  = new ArrayList<>();
+    private ArrayList<Country> asia  = new ArrayList<>();
+    private ArrayList<Country> africa  = new ArrayList<>();
+    private ArrayList<Country> europe  = new ArrayList<>();
 
     public Continent(){
         asia.add(new Country("Armenia"));
