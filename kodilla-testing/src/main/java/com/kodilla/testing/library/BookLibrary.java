@@ -10,13 +10,6 @@ public class BookLibrary {
         this.libraryDatabase = libraryDatabase;
     }
 
-    public boolean rentABook(LibraryUser libraryUser, Book book){
-
-
-
-        return true;
-    }
-
     public List<Book> listBooksWithCondition(String titleFragment) {
         List<Book> bookList = new ArrayList<Book>();
         if (titleFragment.length() < 3) return bookList;
@@ -28,10 +21,14 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
-        List<Book> bookList = new ArrayList<Book>();
+        List<Book> bookListInHandsOf = new ArrayList<Book>();
+        bookListInHandsOf = libraryDatabase.listBooksInHandsOf(libraryUser);
 
+        return bookListInHandsOf;
+    }
 
-        return bookList;
+    public int returnBooks(LibraryUser libraryUser){
+        return libraryDatabase.listBooksInHandsOf(libraryUser).size();
     }
 
 }

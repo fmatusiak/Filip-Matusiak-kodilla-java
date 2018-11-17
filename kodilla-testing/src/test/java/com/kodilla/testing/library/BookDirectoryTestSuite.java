@@ -99,13 +99,59 @@ public class BookDirectoryTestSuite {
         //Given
         LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabase);
-        LibraryUser user = new LibraryUser("Filip","M","1111");
-        List<Book> resultListOf5Books = generateListOfNBooks(5);
+        List<Book> resultListOf1Books = generateListOfNBooks(0);
 
-        bookLibrary.rentABook(user,new Book("edward","edward",11));
+        LibraryUser user = new LibraryUser("Edward", "acki", "1111");
 
-        bookLibrary.listBooksInHandsOf(user);
+        when(libraryDatabase.listBooksInHandsOf(user)).thenReturn(resultListOf1Books);
+
+        //When
+        List<Book> resultListBookUser = libraryDatabase.listBooksInHandsOf(user);
+
+        //Then
+        Assert.assertEquals(0, resultListBookUser.size());
 
 
     }
+
+    @Test
+    public void testListBooksWithHandsOf1() {
+        //Given
+        LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabase);
+        List<Book> resultListOf1Books = generateListOfNBooks(1);
+
+        LibraryUser user = new LibraryUser("Edward", "acki", "1111");
+
+        when(libraryDatabase.listBooksInHandsOf(user)).thenReturn(resultListOf1Books);
+
+        //When
+        List<Book> resultListBookUser = libraryDatabase.listBooksInHandsOf(user);
+
+        //Then
+        Assert.assertEquals(1, resultListBookUser.size());
+
+
+    }
+
+    @Test
+    public void testListBooksWithHandsOf5() {
+        //Given
+        LibraryDatabase libraryDatabase = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabase);
+        List<Book> resultListOf1Books = generateListOfNBooks(5);
+
+        LibraryUser user = new LibraryUser("Edward", "acki", "1111");
+
+        when(libraryDatabase.listBooksInHandsOf(user)).thenReturn(resultListOf1Books);
+
+        //When
+        List<Book> resultListBookUser = libraryDatabase.listBooksInHandsOf(user);
+
+        //Then
+        Assert.assertEquals(5, resultListBookUser.size());
+
+
+    }
+
 }
