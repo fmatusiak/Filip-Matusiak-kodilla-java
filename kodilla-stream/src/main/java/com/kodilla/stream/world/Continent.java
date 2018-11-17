@@ -31,4 +31,22 @@ public final class Continent {
         return europe;
     }
 
+    public ArrayList<Country> getAllCountry(){
+        ArrayList<Country> allCountry = new ArrayList<>();
+
+        for(Country country : getEurope()){
+            allCountry.add(country);
+        }
+
+        for(Country country : getAsia()){
+            allCountry.add(country);
+        }
+
+        for(Country country : getAfrica()){
+            allCountry.add(country);
+        }
+
+        return allCountry;
+    }
+
 }

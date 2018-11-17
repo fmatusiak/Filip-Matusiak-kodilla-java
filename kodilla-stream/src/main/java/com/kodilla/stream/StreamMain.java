@@ -10,6 +10,7 @@ import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.world.World;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -23,8 +24,16 @@ public class StreamMain {
         Map<Integer, ForumUser> forumUsers = forum.getUserList().stream().filter(c -> c.getSex() == 'M').filter(c -> c.getBirthdayDate().getYear() <= 1998).filter(c -> c.getCountPosts() >= 1).collect(Collectors.toMap(ForumUser::getId, ForumUser -> ForumUser));
         System.out.println(forumUsers);
 
-        forumUsers.entrySet().stream().map(entry -> entry.getKey() + "  Name: " + entry.getValue().getUserName() + " Birthday: " + entry.getValue().getBirthdayDate() + " Posts: " + entry.getValue().getCountPosts() + " Sex: " + entry.getValue().getSex() ).forEach(System.out::println);
+        forumUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + "  Name: " + entry
+                        .getValue().getUserName() + " Birthday: " + entry
+                        .getValue().getBirthdayDate() + " Posts: " + entry
+                        .getValue().getCountPosts() + " Sex: " + entry
+                        .getValue().getSex())
+                .forEach(System.out::println);
 
+        World world = new World();
+        System.out.println(world.getPeopleQuantity());
 
 
 
