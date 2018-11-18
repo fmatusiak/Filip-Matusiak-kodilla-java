@@ -5,8 +5,10 @@ import java.util.ArrayList;
 
 public final class Country {
     private String countryName;
+    private BigDecimal peopleQuantity;
 
-    public Country(String countryName){
+    public Country(String countryName,BigDecimal peopleQuantity){
+        this.peopleQuantity = peopleQuantity;
         this.countryName = countryName;
     }
 
@@ -15,7 +17,6 @@ public final class Country {
     }
 
     public  BigDecimal getPeopleQuantity(){
-        BigDecimal peopleQuantity = new BigDecimal(1234567890);
         return peopleQuantity;
     }
 }
