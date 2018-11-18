@@ -6,13 +6,13 @@ import java.util.List;
 
 public final class Continent {
 
-    private ArrayList<Country> countryList  = new ArrayList<>();
+    private ArrayList<Country> countryList = new ArrayList<>();
 
-    public Continent(){
+    public Continent() {
 
     }
 
-    public Continent(ArrayList<Country> countryList){
+    public Continent(ArrayList<Country> countryList) {
         this.countryList = countryList;
     }
 
@@ -20,7 +20,7 @@ public final class Continent {
         return countryList;
     }
 
-    public void addCountry(Country country){
+    public void addCountry(Country country) {
         countryList.add(country);
     }
 
