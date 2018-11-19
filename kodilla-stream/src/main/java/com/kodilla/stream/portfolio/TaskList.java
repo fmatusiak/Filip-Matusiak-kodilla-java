@@ -12,15 +12,15 @@ public final class TaskList {
         this.name = name;
     }
 
-    public void addTask(Task task){
+    public void addTask(Task task) {
         tasks.add(task);
     }
 
-    public boolean removeTask(Task task){
+    public boolean removeTask(Task task) {
         return tasks.remove(task);
     }
 
-    public List<Task> getTasks(){
+    public List<Task> getTasks() {
         return new LinkedList<>(tasks);
     }
 
@@ -41,12 +41,7 @@ public final class TaskList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TaskList taskList = (TaskList) o;
-        return Objects.equals(tasks, taskList.tasks) &&
-                Objects.equals(name, taskList.name);
+        return Objects.equals(name, taskList.name);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(tasks, name);
-    }
 }

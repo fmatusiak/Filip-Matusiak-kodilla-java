@@ -23,7 +23,6 @@ public final class User {
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
-                ", realName='" + realName + '\'' +
                 '}';
     }
 
@@ -32,12 +31,11 @@ public final class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(username, user.username) &&
-                Objects.equals(realName, user.realName);
+        return Objects.equals(username, user.username);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, realName);
+        return Objects.hash(username);
     }
 }
