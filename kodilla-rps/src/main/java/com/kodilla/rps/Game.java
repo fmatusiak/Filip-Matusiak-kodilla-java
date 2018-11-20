@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-    private MainMenu mainMenu;
     private User user;
     private Results results;
     boolean end = false;
@@ -17,17 +16,26 @@ public class Game {
     }
 
     public void newGame() {
-        end = checkNumbersRound();
 
-        while (!end) {
+        do{
             Scanner scanner = new Scanner(System.in);
             System.out.print("Make a move : ");
-            int moveUser = scanner.nextInt();
-            int moveComputer = generateComputerTraffic();
+            String moveUser = scanner.next();
 
-            checkResult(moveUser, moveComputer);
-            end = checkNumbersRound();
+            if(isNumeric(moveUser)){
+                int intMoveUser = Integer.parseInt(moveUser);
+                int moveComputer = generateComputerTraffic();
+                checkTheResults(intMoveUser, moveComputer);
+                end = checkNumbersRound();
+            }else if(moveUser.equals("x")){
+                System.out.println("    END THE GAME  ");
+                end = true;
+            }else if(moveUser.equals("n")){
+               MainMenu mainMenu = new MainMenu();
+            }
+
         }
+        while (!end);
 
         results.showResultGame();
 
@@ -41,6 +49,20 @@ public class Game {
         }
     }
 
+    public static boolean isNumeric(String str)
+    {
+        try
+        {
+            int d = Integer.parseInt(str);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
+    }
+
+
 
     public int generateComputerTraffic() {
         Random generateRps = new Random();
@@ -48,7 +70,7 @@ public class Game {
         return moveComputer;
     }
 
-    public void checkResult(int moveUser, int moveComputer) {
+    public void checkTheResults(int moveUser, int moveComputer) {
 
         if (moveUser == moveComputer) {
             results.showResultsRound();

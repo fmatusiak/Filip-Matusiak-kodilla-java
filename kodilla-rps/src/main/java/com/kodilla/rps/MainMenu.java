@@ -3,16 +3,15 @@ package com.kodilla.rps;
 import java.util.Scanner;
 
 public class MainMenu {
-    private User user;
-    private Game game;
+    User user;
 
-    public MainMenu(){
+    public MainMenu() {
+        Game game;
         setUserAndNumberOfRounds();
         showInstruction();
         game = new Game(user);
 
     }
-
 
     public void showInstruction() {
         System.out.println("<----Instruction---->");
