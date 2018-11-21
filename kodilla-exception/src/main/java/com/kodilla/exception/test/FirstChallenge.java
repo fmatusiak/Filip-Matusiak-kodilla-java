@@ -4,7 +4,11 @@ public class FirstChallenge {
     public double divide(double a, double b) {
         double resultsDivide = 0;
         try {
-            resultsDivide = a / b;
+            if(b == 0)
+                throw new ArithmeticException();
+
+                resultsDivide = a / b;
+
         } catch (ArithmeticException e) {
             System.out.println("Can't divide by ZERO");
         } finally {
