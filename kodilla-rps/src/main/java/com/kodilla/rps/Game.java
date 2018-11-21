@@ -28,11 +28,11 @@ public class Game {
                 checkTheResults(intMoveUser, moveComputer);
                 end = checkNumbersRound();
             }else if(moveUser.equals("x")){
-                System.out.println("    END THE GAME  ");
-                end = true;
-            }else if(moveUser.equals("n")){
-               MainMenu mainMenu = new MainMenu();
-            }
+                    System.out.println("    END THE GAME  ");
+                    end = true;
+                }else if(moveUser.equals("n")){
+                    MainMenu mainMenu = new MainMenu();
+                }
 
         }
         while (!end);
