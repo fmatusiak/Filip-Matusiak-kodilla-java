@@ -22,7 +22,6 @@ public class Game {
     public void newGame() {
 
         do {
-
             scanner = new Scanner(System.in);
             System.out.print("Make a move : ");
             String moveUser = scanner.next();
@@ -104,23 +103,27 @@ public class Game {
 
         if (tmpMoveUser == moveComputer) {
             results.showResultsRound();
-            results.shgwResultsTie();
+            results.showResultsTie();
 
         } else if (tmpMoveUser == 1 && moveComputer == 2) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
+            results.showResultsRound();
 
         } else if (tmpMoveUser == 1 && moveComputer == 3) {
             results.addPointToUser();
             results.showResultsWinnerUser();
+            results.showResultsRound();
 
         } else if (tmpMoveUser == 2 && moveComputer == 1) {
             results.addPointToUser();
             results.showResultsWinnerUser();
+            results.showResultsRound();
 
         } else if (tmpMoveUser == 2 && moveComputer == 3) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
+            results.showResultsRound();
         }
 
     }
