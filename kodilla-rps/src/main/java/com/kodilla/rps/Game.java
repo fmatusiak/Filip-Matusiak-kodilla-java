@@ -7,14 +7,19 @@ import java.util.Scanner;
 public class Game {
     User user;
     Round round;
-    Scanner scanner;
+    MainMenu mainMenu;
+    Results results;
 
-    private Results results;
+    Scanner scanner = new Scanner(System.in);
     boolean end = false;
 
     public Game(User user, Round round) {
         this.user = user;
         this.round = round;
+    }
+
+    public void runNewGame() {
+        mainMenu = new MainMenu();
         results = new Results(user);
         newGame();
     }
@@ -22,7 +27,6 @@ public class Game {
     public void newGame() {
 
         do {
-            scanner = new Scanner(System.in);
             System.out.print("Make a move : ");
             String moveUser = scanner.next();
             int moveComputer = generateComputerTraffic();
@@ -49,7 +53,7 @@ public class Game {
                     break;
                 }
                 default: {
-                    System.out.println("Choose good options !!!!");
+                    showDefaultMessage();
                     break;
                 }
             }
@@ -60,25 +64,49 @@ public class Game {
 
         results.showResultGame();
 
+        ChoiceAtTheEndOfGame();
+
+    }
+
+    public void ChoiceAtTheEndOfGame() {
+        mainMenu.showInstructionOnEndGame();
+        System.out.println("-------------- ");
+        System.out.print("Make a move: ");
+        String reply = scanner.next();
+
+        switch (reply) {
+            case "x": {
+                exitTheGame();
+            }
+            case "n": {
+                createNewGame();
+            }
+            default: {
+                showDefaultMessage();
+                break;
+            }
+        }
+    }
+
+    public void showDefaultMessage() {
+        System.out.println("Choose good options !!!!");
     }
 
     public void exitTheGame() {
-        scanner = new Scanner(System.in);
         System.out.println("Are you sure you want to quit y/n ?");
         String reply = scanner.next();
         if (reply.equals("y")) {
+            System.out.println("Exit the Game ....");
             System.exit(0);
         }
 
     }
 
     public void createNewGame() {
-        scanner = new Scanner(System.in);
         System.out.println("Are you sure you want to create New Game ? y/n ?");
         String reply = scanner.next();
         if (reply.equals("y")) {
-            Game game = new Game(user, round);
-            game.newGame();
+            mainMenu.createMainMenu();
         }
     }
 
@@ -121,6 +149,16 @@ public class Game {
             results.showResultsRound();
 
         } else if (tmpMoveUser == 2 && moveComputer == 3) {
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 3 && moveComputer == 2) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 3 && moveComputer == 1) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
