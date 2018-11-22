@@ -1,34 +1,49 @@
 package com.kodilla.rps;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainMenu {
     User user;
+    Round round;
+
+    Scanner scanner = new Scanner(System.in);
 
     public MainMenu() {
         Game game;
-        setUserAndNumberOfRounds();
+        setUser();
+        setNumberOfRounds();
         showInstruction();
-        game = new Game(user);
-
+        game = new Game(user, round);
     }
 
     public void showInstruction() {
+        System.out.println(" ");
         System.out.println("<----Instruction---->");
         System.out.println("Key 1 : Stone");
         System.out.println("Key 2 : Paper");
         System.out.println("Key 3 : Shears");
         System.out.println("Key x : End The Game");
         System.out.println("Key n : New Game");
-    }
-
-    public void setUserAndNumberOfRounds() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter user name: ");
-        String userName = scanner.next();
-        System.out.print("Enter number of rounds: ");
-        int numberOfRounds = scanner.nextInt();
-        user = new User(userName, numberOfRounds);
         System.out.println(" ");
     }
+
+    public void setUser() {
+        System.out.print("Enter name: ");
+        String userName = scanner.next();
+        user = new User(userName);
+    }
+
+    public void setNumberOfRounds() {
+        System.out.print("Enter number of rounds: ");
+        int numberOfRounds;
+        try {
+            numberOfRounds = scanner.nextInt();
+            round = new Round(numberOfRounds);
+        } catch (InputMismatchException e) {
+            System.out.println("You can write number of rounds !!!");
+        }
+    }
+
 }

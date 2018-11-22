@@ -27,6 +27,11 @@ public class Results {
         return pointComputer;
     }
 
+    public void shgwResultsTie(){
+        System.out.println("!!!!! TIE  !!!!!");
+        showResultsRound();
+    }
+
     public void showResultsWinnerComputer() {
         System.out.println("Winner Computer");
         showResultsRound();
@@ -40,34 +45,34 @@ public class Results {
     public void showResultsRound() {
         System.out.println(" ");
         System.out.println("#### Result ROUND ####");
-        System.out.println("User score : " + pointUser);
-        System.out.println("Computer score: " + pointComputer);
+        System.out.println("User score : " + getPointUser());
+        System.out.println("Computer score: " + getPointComputer());
         System.out.println(" ");
-
     }
 
     public void showResultGame() {
-        if (pointUser == pointComputer) {
+        //TIE
+        if (getPointUser() == getPointComputer()) {
             System.out.println(" ");
             System.out.println("#### Result GAME ####");
-            System.out.println(user.getUserName() + " score: " + pointUser);
-            System.out.println("Computer score: " + pointComputer);
             System.out.println(" !!!! TIE !!!!");
+            System.out.println(user.getUserName() + " score: " + getPointUser());
+            System.out.println("Computer score: " + getPointComputer());
             System.out.println(" ");
-        } else if (pointUser > pointComputer) {
+        } else if (getPointUser() > getPointComputer()) {
+            //win user
             System.out.println(" ");
             System.out.println("#### Result GAME ####");
             System.out.println("Winner user ");
-            System.out.println(user.getUserName() + " score: " + pointUser);
-            System.out.println("Computer score: " + pointComputer);
-            //win user
+            System.out.println(user.getUserName() + " score: " + getPointUser());
+            System.out.println("Computer score: " + getPointComputer());
         } else {
+            //win computer
             System.out.println(" ");
             System.out.println("#### Result GAME ####");
             System.out.println("Winner computer ");
-            System.out.println("Computer score: " + pointComputer);
-            System.out.println(user.getUserName() + "score: " + pointUser);
-            //win computer
+            System.out.println("Computer score: " + getPointComputer());
+            System.out.println(user.getUserName() + " score: " + getPointComputer());
         }
     }
 }
