@@ -1,6 +1,5 @@
 package com.kodilla.rps;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,20 +10,21 @@ public class Game {
     Results results;
 
     Scanner scanner = new Scanner(System.in);
-    boolean end = false;
-
-    public Game(User user, Round round) {
-        this.user = user;
-        this.round = round;
-    }
-
-    public void runNewGame() {
-        mainMenu = new MainMenu();
-        results = new Results(user);
-        newGame();
-    }
 
     public void newGame() {
+        mainMenu = new MainMenu();
+        user = new User();
+        round = new Round();
+        user.setUser();
+        round.setNumberOfRounds();
+        results = new Results(user);
+        mainMenu.showInstruction();
+        makeAMove();
+    }
+
+    public void makeAMove() {
+
+        boolean end = false;
 
         do {
             System.out.print("Make a move : ");
@@ -33,15 +33,28 @@ public class Game {
 
             switch (moveUser) {
                 case "1": {
-                    checkTheResults(moveUser, moveComputer);
+                    //Stone
+                    checkWhoIsWin(moveUser, moveComputer);
                     break;
                 }
                 case "2": {
-                    checkTheResults(moveUser, moveComputer);
+                    //Paper
+                    checkWhoIsWin(moveUser, moveComputer);
                     break;
                 }
                 case "3": {
-                    checkTheResults(moveUser, moveComputer);
+                    //Shears
+                    checkWhoIsWin(moveUser, moveComputer);
+                    break;
+                }
+                case "4": {
+                    //Lizard
+                    checkWhoIsWin(moveUser, moveComputer);
+                    break;
+                }
+                case "5": {
+                    //Spock
+                    checkWhoIsWin(moveUser, moveComputer);
                     break;
                 }
                 case "x": {
@@ -106,7 +119,7 @@ public class Game {
         System.out.println("Are you sure you want to create New Game ? y/n ?");
         String reply = scanner.next();
         if (reply.equals("y")) {
-            mainMenu.createMainMenu();
+            newGame();
         }
     }
 
@@ -121,11 +134,11 @@ public class Game {
 
     public int generateComputerTraffic() {
         Random generateRps = new Random();
-        int moveComputer = generateRps.nextInt(3 - 1 + 1) + 1;
+        int moveComputer = generateRps.nextInt(5 - 1 + 1) + 1;
         return moveComputer;
     }
 
-    public void checkTheResults(String moveUser, int moveComputer) {
+    public void checkWhoIsWin(String moveUser, int moveComputer) {
 
         int tmpMoveUser = Integer.parseInt(moveUser);
 
@@ -162,6 +175,73 @@ public class Game {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
+
+        } else if (tmpMoveUser == 1 && moveComputer == 4) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 4 && moveComputer == 5) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 5 && moveComputer == 3) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 3 && moveComputer == 4) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 4 && moveComputer == 2) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 2 && moveComputer == 5) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 5 && moveComputer == 1) {
+            results.addPointToUser();
+            results.showResultsWinnerUser();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 5 && moveComputer == 4) {
+
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 3 && moveComputer == 5) {
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 4 && moveComputer == 3) {
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 2 && moveComputer == 4) {
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 5 && moveComputer == 2) {
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
+        } else if (tmpMoveUser == 1 && moveComputer == 5) {
+            results.addPointToComputer();
+            results.showResultsWinnerComputer();
+            results.showResultsRound();
+
         }
 
     }

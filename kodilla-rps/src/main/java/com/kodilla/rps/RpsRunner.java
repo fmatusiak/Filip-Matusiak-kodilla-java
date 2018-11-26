@@ -3,8 +3,8 @@ package com.kodilla.rps;
 public class RpsRunner {
 
     public static void main(String[] args) {
-        MainMenu mainMenu = new MainMenu();
-        mainMenu.createMainMenu();
+        Game game = new Game();
+        game.newGame();
 
     }
 }

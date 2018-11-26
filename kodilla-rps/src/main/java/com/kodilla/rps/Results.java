@@ -10,7 +10,6 @@ public class Results {
         this.user = user;
     }
 
-
     public void addPointToUser() {
         pointUser++;
     }
