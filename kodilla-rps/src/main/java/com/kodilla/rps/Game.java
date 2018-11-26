@@ -8,6 +8,7 @@ public class Game {
     Round round;
     MainMenu mainMenu;
     Results results;
+    Computer computer;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -15,6 +16,7 @@ public class Game {
         mainMenu = new MainMenu();
         user = new User();
         round = new Round();
+        computer = new Computer();
         user.setUser();
         round.setNumberOfRounds();
         results = new Results(user);
@@ -29,7 +31,7 @@ public class Game {
         do {
             System.out.print("Make a move : ");
             String moveUser = scanner.next();
-            int moveComputer = generateComputerTraffic();
+            String moveComputer = computer.generateComputerTraffic();
 
             switch (moveUser) {
                 case "1": {
@@ -132,112 +134,104 @@ public class Game {
 
     }
 
-    public int generateComputerTraffic() {
-        Random generateRps = new Random();
-        int moveComputer = generateRps.nextInt(5 - 1 + 1) + 1;
-        return moveComputer;
-    }
+    public void checkWhoIsWin(String moveUser, String moveComputer) {
 
-    public void checkWhoIsWin(String moveUser, int moveComputer) {
-
-        int tmpMoveUser = Integer.parseInt(moveUser);
-
-        if (tmpMoveUser == moveComputer) {
+        if (moveUser.equals(moveComputer)) {
             results.showResultsRound();
             results.showResultsTie();
 
-        } else if (tmpMoveUser == 1 && moveComputer == 2) {
+        } else if (moveUser.equals("1") && moveComputer.equals(2)) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 1 && moveComputer == 3) {
+        } else if (moveUser.equals("1") && moveComputer.equals("3")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 2 && moveComputer == 1) {
+        } else if (moveUser.equals("2") && moveComputer.equals("1")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 2 && moveComputer == 3) {
+        } else if (moveUser.equals("2") && moveComputer.equals("3")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 3 && moveComputer == 2) {
+        } else if (moveUser.equals("3") && moveComputer.equals("2")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 3 && moveComputer == 1) {
+        } else if (moveUser.equals("3") && moveComputer.equals("1")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 1 && moveComputer == 4) {
+        } else if (moveUser.equals("1") && moveComputer.equals("4")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 4 && moveComputer == 5) {
+        } else if (moveUser.equals("4") && moveComputer.equals("5")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 5 && moveComputer == 3) {
+        } else if (moveUser.equals("5") && moveComputer.equals("3")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 3 && moveComputer == 4) {
+        } else if (moveUser.equals("3") && moveComputer.equals("4")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 4 && moveComputer == 2) {
+        } else if (moveUser.equals("4") && moveComputer.equals("2")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 2 && moveComputer == 5) {
+        } else if (moveUser.equals("2") && moveComputer.equals("5")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 5 && moveComputer == 1) {
+        } else if (moveUser.equals("5") && moveComputer.equals("1")) {
             results.addPointToUser();
             results.showResultsWinnerUser();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 5 && moveComputer == 4) {
+        } else if (moveUser.equals("5") && moveComputer.equals("4")) {
 
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 3 && moveComputer == 5) {
+        } else if (moveUser.equals("3") && moveComputer.equals("5")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 4 && moveComputer == 3) {
+        } else if (moveUser.equals("4") && moveComputer.equals("3")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 2 && moveComputer == 4) {
+        } else if (moveUser.equals("2") && moveComputer.equals("4")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 5 && moveComputer == 2) {
+        } else if (moveUser.equals("5") && moveComputer.equals("2")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
 
-        } else if (tmpMoveUser == 1 && moveComputer == 5) {
+        } else if (moveUser.equals("1") && moveComputer.equals("5")) {
             results.addPointToComputer();
             results.showResultsWinnerComputer();
             results.showResultsRound();
