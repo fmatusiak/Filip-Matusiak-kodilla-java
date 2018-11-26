@@ -12,7 +12,10 @@ public class Round {
         try {
             numberOfRounds = scanner.nextInt();
         } catch (InputMismatchException e) {
+            System.out.println(" ");
             System.out.println("You can write number of rounds !!!");
+            System.out.println(" ");
+            setNumberOfRounds();
         }
 
     }
