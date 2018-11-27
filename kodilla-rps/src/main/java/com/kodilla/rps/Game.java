@@ -20,7 +20,7 @@ public class Game {
         winChecker = new WinChecker();
         user.setUser();
         round.setNumberOfRounds();
-        results = new Results(user,computer);
+        results = new Results(user, computer);
         mainMenu.showInstruction();
         makeAMove();
     }
@@ -35,13 +35,13 @@ public class Game {
             String moveUser = scanner.next();
             String moveComputer = computer.generateComputerTraffic();
 
-            if(moveChecker.checkMove(moveUser)) {
-                if(moveUser.equals("n")){
+            if (moveChecker.checkMove(moveUser)) {
+                if (moveUser.equals("n")) {
                     createNewGame();
-                } else if(moveUser.equals("x")){
-                    ChoiceAtTheEndOfGame();
+                } else if (moveUser.equals("x")) {
+                    exitTheGame();
                 } else {
-                    showWhoIsWin(moveUser,moveComputer);
+                    checkWhoIsWin(moveUser, moveComputer);
                 }
 
             } else {
@@ -55,7 +55,7 @@ public class Game {
         }
         while (!end);
 
-        results.showResultGame();
+        checkResultGame(user, computer);
 
         ChoiceAtTheEndOfGame();
 
@@ -82,7 +82,7 @@ public class Game {
     }
 
     public void showDefaultMessage() {
-        System.out.println("Choose good options !!!!");
+        System.out.println("Choose no good options !!!!");
     }
 
     public void exitTheGame() {
@@ -112,20 +112,35 @@ public class Game {
 
     }
 
-    public void showWhoIsWin(String moveUser,String moveComputer){
-        int whoIsWin = winChecker.checkWhoIsWin(moveUser,moveComputer);
+    public void checkWhoIsWin(String moveUser, String moveComputer) {
+        int whoIsWin = winChecker.checkWhoIsWin(moveUser, moveComputer);
 
-        if(whoIsWin == 0){
+        if (whoIsWin == 0) {
             results.showResultsTie();
-        }
-        else if(whoIsWin == 1) {
+        } else if (whoIsWin == 1) {
             user.addPointToUser();
             results.showResultsWinnerUser();
-        }
-        else if(whoIsWin == 2){
+        } else if (whoIsWin == 2) {
             computer.addPointToComputer();
             results.showResultsWinnerComputer();
         }
 
     }
+
+    public void checkResultGame(User user, Computer computer) {
+        ResultChecker resultChecker = new ResultChecker();
+        int resultGame = resultChecker.checkResultGame(user, computer);
+
+        System.out.println("#### END GAME ####");
+        if (resultGame == 0) {
+            results.showResultsTie();
+        } else if (resultGame == 1) {
+            results.showResultsWinnerUser();
+        } else if (resultGame == 2) {
+            results.showResultsWinnerComputer();
+        }
+    }
+
+
 }
+

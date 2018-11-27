@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MoveChecker {
 
-    public boolean checkMove(String moveUser){
+    public boolean checkMove(String moveUser) {
         List<String> moveValue = new ArrayList<>();
         moveValue.add("1");
         moveValue.add("2");
@@ -15,10 +15,10 @@ public class MoveChecker {
         moveValue.add("x");
         moveValue.add("n");
 
-        if(moveValue.contains(moveUser)){
+        if (moveValue.contains(moveUser)) {
             return true;
         } else
-        return false;
+            return false;
     }
 
 }

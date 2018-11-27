@@ -44,26 +44,5 @@ public class Results {
         showResultScore();
     }
 
-    public void showResultGame() {
 
-        if (user.getPointUser() == computer.getPointComputer()) {
-            //TIE
-            System.out.println("#### Result GAME ####");
-            showResultsTie();
-
-
-        } else if (user.getPointUser() > computer.getPointComputer()) {
-            //win user
-            System.out.println("#### Result GAME ####");
-            showResultsWinnerUser();
-
-
-        } else {
-            //win computer
-            System.out.println("#### Result GAME ####");
-            showResultsWinnerComputer();
-
-
-        }
-    }
 }

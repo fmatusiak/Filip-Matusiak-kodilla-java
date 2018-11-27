@@ -1,4 +1,4 @@
-import com.kodilla.rps.Results;
+import com.kodilla.rps.Computer;
 import com.kodilla.rps.User;
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,11 +8,10 @@ public class RpsTestSuite {
     @Test
     public void testComputerResultPoint0() {
         //Given
-        User user = new User();
-        Results results = new Results(user);
+        Computer computer = new Computer();
 
         //When
-        int resultComputer = results.getPointComputer();
+        int resultComputer = computer.getPointComputer();
 
         //Then
         Assert.assertEquals(0, resultComputer);
@@ -22,10 +21,9 @@ public class RpsTestSuite {
     public void testPlayerResultPoint0() {
         //Given
         User user = new User();
-        Results results = new Results(user);
 
         //When
-        int resultPlayer = results.getPointUser();
+        int resultPlayer = user.getPointUser();
 
         //Then
         Assert.assertEquals(0, resultPlayer);
