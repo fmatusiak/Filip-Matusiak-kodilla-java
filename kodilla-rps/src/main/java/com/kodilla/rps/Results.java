@@ -1,53 +1,40 @@
 package com.kodilla.rps;
 
 public class Results {
+
     User user;
+    Computer computer;
 
-    private int pointUser;
-    private int pointComputer;
-
-    public Results(User user) {
+    public Results(User user, Computer computer){
         this.user = user;
-    }
-
-    public void addPointToUser() {
-        pointUser++;
-    }
-
-    public void addPointToComputer() {
-        pointComputer++;
-    }
-
-    public int getPointUser() {
-        return pointUser;
-    }
-
-    public int getPointComputer() {
-        return pointComputer;
+        this.computer = computer;
     }
 
     public void showResultsTie() {
         System.out.println(" ");
         System.out.println("!!!!! TIE  !!!!!");
         System.out.println(" ");
+        showResultScore();
     }
 
     public void showResultsWinnerComputer() {
         System.out.println(" ");
         System.out.println("Winner Computer");
         System.out.println(" ");
+        showResultScore();
     }
 
     public void showResultsWinnerUser() {
         System.out.println(" ");
         System.out.println("Winner User " + user.getUserName());
         System.out.println(" ");
+        showResultScore();
     }
 
     public void showResultScore() {
         System.out.println(" ");
-        System.out.println(user.getUserName() + " score : " + getPointUser());
-        System.out.println("Computer score: " + getPointComputer());
+        System.out.println(user.getUserName() + " score : " + user.getPointUser());
+        System.out.println("Computer score: " + computer.getPointComputer());
         System.out.println(" ");
     }
 
@@ -59,23 +46,23 @@ public class Results {
 
     public void showResultGame() {
 
-        if (getPointUser() == getPointComputer()) {
+        if (user.getPointUser() == computer.getPointComputer()) {
             //TIE
             System.out.println("#### Result GAME ####");
             showResultsTie();
-            showResultScore();
 
-        } else if (getPointUser() > getPointComputer()) {
+
+        } else if (user.getPointUser() > computer.getPointComputer()) {
             //win user
             System.out.println("#### Result GAME ####");
             showResultsWinnerUser();
-            showResultScore();
+
 
         } else {
             //win computer
             System.out.println("#### Result GAME ####");
             showResultsWinnerComputer();
-            showResultScore();
+
 
         }
     }

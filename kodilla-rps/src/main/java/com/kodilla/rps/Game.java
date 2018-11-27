@@ -1,6 +1,5 @@
 package com.kodilla.rps;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -9,6 +8,7 @@ public class Game {
     MainMenu mainMenu;
     Results results;
     Computer computer;
+    WinChecker winChecker;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -17,14 +17,16 @@ public class Game {
         user = new User();
         round = new Round();
         computer = new Computer();
+        winChecker = new WinChecker();
         user.setUser();
         round.setNumberOfRounds();
-        results = new Results(user);
+        results = new Results(user,computer);
         mainMenu.showInstruction();
         makeAMove();
     }
 
     public void makeAMove() {
+        MoveChecker moveChecker = new MoveChecker();
 
         boolean end = false;
 
@@ -33,46 +35,22 @@ public class Game {
             String moveUser = scanner.next();
             String moveComputer = computer.generateComputerTraffic();
 
-            switch (moveUser) {
-                case "1": {
-                    //Stone
-                    checkWhoIsWin(moveUser, moveComputer);
-                    break;
-                }
-                case "2": {
-                    //Paper
-                    checkWhoIsWin(moveUser, moveComputer);
-                    break;
-                }
-                case "3": {
-                    //Shears
-                    checkWhoIsWin(moveUser, moveComputer);
-                    break;
-                }
-                case "4": {
-                    //Lizard
-                    checkWhoIsWin(moveUser, moveComputer);
-                    break;
-                }
-                case "5": {
-                    //Spock
-                    checkWhoIsWin(moveUser, moveComputer);
-                    break;
-                }
-                case "x": {
-                    exitTheGame();
-                    break;
-                }
-                case "n": {
+            if(moveChecker.checkMove(moveUser)) {
+                if(moveUser.equals("n")){
                     createNewGame();
-                    break;
+                } else if(moveUser.equals("x")){
+                    ChoiceAtTheEndOfGame();
+                } else {
+                    showWhoIsWin(moveUser,moveComputer);
                 }
-                default: {
-                    showDefaultMessage();
-                    break;
-                }
+
+            } else {
+                showDefaultMessage();
+                makeAMove();
             }
             end = checkNumbersRound();
+
+            mainMenu.showInstruction();
 
         }
         while (!end);
@@ -126,7 +104,7 @@ public class Game {
     }
 
     public boolean checkNumbersRound() {
-        if (round.getNumberOfRounds() == results.getPointComputer() || round.getNumberOfRounds() == results.getPointUser()) {
+        if (round.getNumberOfRounds() == computer.getPointComputer() || round.getNumberOfRounds() == user.getPointUser()) {
             return true;
         } else {
             return false;
@@ -134,108 +112,19 @@ public class Game {
 
     }
 
-    public void checkWhoIsWin(String moveUser, String moveComputer) {
+    public void showWhoIsWin(String moveUser,String moveComputer){
+        int whoIsWin = winChecker.checkWhoIsWin(moveUser,moveComputer);
 
-        if (moveUser.equals(moveComputer)) {
-            results.showResultsRound();
+        if(whoIsWin == 0){
             results.showResultsTie();
-
-        } else if (moveUser.equals("1") && moveComputer.equals(2)) {
-            results.addPointToComputer();
+        }
+        else if(whoIsWin == 1) {
+            user.addPointToUser();
+            results.showResultsWinnerUser();
+        }
+        else if(whoIsWin == 2){
+            computer.addPointToComputer();
             results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("1") && moveComputer.equals("3")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("2") && moveComputer.equals("1")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("2") && moveComputer.equals("3")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("3") && moveComputer.equals("2")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("3") && moveComputer.equals("1")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("1") && moveComputer.equals("4")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("4") && moveComputer.equals("5")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("5") && moveComputer.equals("3")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("3") && moveComputer.equals("4")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("4") && moveComputer.equals("2")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("2") && moveComputer.equals("5")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("5") && moveComputer.equals("1")) {
-            results.addPointToUser();
-            results.showResultsWinnerUser();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("5") && moveComputer.equals("4")) {
-
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("3") && moveComputer.equals("5")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("4") && moveComputer.equals("3")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("2") && moveComputer.equals("4")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("5") && moveComputer.equals("2")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
-        } else if (moveUser.equals("1") && moveComputer.equals("5")) {
-            results.addPointToComputer();
-            results.showResultsWinnerComputer();
-            results.showResultsRound();
-
         }
 
     }

@@ -16,7 +16,8 @@ public class MainMenu {
     }
 
     public void showInstructionOnEndGame() {
-        System.out.println("####################### ");
+        System.out.println("--------GAME OVER ---------- ");
+        System.out.println("######## MAKE A MOVE ######## ");
         System.out.println(" ");
         System.out.println("Key x : End The Game");
         System.out.println("Key n : New Game");
