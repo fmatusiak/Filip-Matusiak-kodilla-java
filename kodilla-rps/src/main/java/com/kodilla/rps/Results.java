@@ -33,8 +33,8 @@ public class Results {
 
     public void showResultScore() {
         System.out.println(" ");
-        System.out.println(user.getUserName() + " score : " + user.getPointUser());
-        System.out.println("Computer score: " + computer.getPointComputer());
+        System.out.println(user.getUserName() + " score : " + user.getPoints());
+        System.out.println("Computer score: " + computer.getPoints());
         System.out.println(" ");
     }
 

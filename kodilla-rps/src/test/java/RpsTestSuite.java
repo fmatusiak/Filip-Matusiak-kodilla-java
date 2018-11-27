@@ -11,7 +11,7 @@ public class RpsTestSuite {
         Computer computer = new Computer();
 
         //When
-        int resultComputer = computer.getPointComputer();
+        int resultComputer = computer.getPoints();
 
         //Then
         Assert.assertEquals(0, resultComputer);
@@ -23,7 +23,7 @@ public class RpsTestSuite {
         User user = new User();
 
         //When
-        int resultPlayer = user.getPointUser();
+        int resultPlayer = user.getPoints();
 
         //Then
         Assert.assertEquals(0, resultPlayer);

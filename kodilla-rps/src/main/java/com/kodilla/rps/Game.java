@@ -8,7 +8,6 @@ public class Game {
     MainMenu mainMenu;
     Results results;
     Computer computer;
-    WinChecker winChecker;
 
     Scanner scanner = new Scanner(System.in);
 
@@ -17,7 +16,6 @@ public class Game {
         user = new User();
         round = new Round();
         computer = new Computer();
-        winChecker = new WinChecker();
         user.setUser();
         round.setNumberOfRounds();
         results = new Results(user, computer);
@@ -104,7 +102,7 @@ public class Game {
     }
 
     public boolean checkNumbersRound() {
-        if (round.getNumberOfRounds() == computer.getPointComputer() || round.getNumberOfRounds() == user.getPointUser()) {
+        if (round.getNumberOfRounds() == computer.getPoints() || round.getNumberOfRounds() == user.getPoints()) {
             return true;
         } else {
             return false;
@@ -113,6 +111,7 @@ public class Game {
     }
 
     public void checkWhoIsWin(String moveUser, String moveComputer) {
+        WinChecker winChecker = new WinChecker();
         int whoIsWin = winChecker.checkWhoIsWin(moveUser, moveComputer);
 
         if (whoIsWin == 0) {

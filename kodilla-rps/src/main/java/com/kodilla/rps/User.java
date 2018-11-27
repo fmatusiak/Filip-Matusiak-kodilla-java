@@ -2,9 +2,14 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public class User {
+public class User implements Points{
     private String userName;
     private int pointUser;
+
+    @Override
+    public int getPoints() {
+        return pointUser;
+    }
 
     public void setUser() {
         Scanner scanner = new Scanner(System.in);
@@ -14,10 +19,6 @@ public class User {
 
     public void addPointToUser() {
         pointUser++;
-    }
-
-    public int getPointUser() {
-        return pointUser;
     }
 
     public String getUserName() {

@@ -2,16 +2,17 @@ package com.kodilla.rps;
 
 import java.util.Random;
 
-public class Computer {
+public class Computer implements Points{
     private String moveComputer;
     private int pointComputer;
 
-    public void addPointToComputer() {
-        pointComputer++;
+    @Override
+    public int getPoints() {
+        return pointComputer;
     }
 
-    public int getPointComputer() {
-        return pointComputer;
+    public void addPointToComputer() {
+        pointComputer++;
     }
 
     public String generateComputerTraffic() {
@@ -36,4 +37,5 @@ public class Computer {
 
         return moveComputer;
     }
+
 }
