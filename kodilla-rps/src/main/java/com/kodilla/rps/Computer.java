@@ -2,7 +2,8 @@ package com.kodilla.rps;
 
 import java.util.Random;
 
-public class Computer implements Points{
+public class Computer implements Points {
+
     private String moveComputer;
     private int pointComputer;
 
@@ -34,7 +35,6 @@ public class Computer implements Points{
         if (tmpMoveComputer == 5) {
             moveComputer = "5";
         }
-
         return moveComputer;
     }
 

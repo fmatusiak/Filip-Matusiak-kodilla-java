@@ -2,7 +2,7 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public class User implements Points{
+public class User implements Points {
     private String userName;
     private int pointUser;
 

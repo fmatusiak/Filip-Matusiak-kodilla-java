@@ -1,8 +1,9 @@
 package com.kodilla.rps;
 
 public class WinChecker {
-    public int  checkWhoIsWin(String moveUser, String moveComputer) {
 
+    public int checkWhoIsWin(String moveUser, String moveComputer) {
+        // 1 rock  , 2 - paper , 3 - scissors , 4 - lizard , 5 - spock
         if (moveUser.equals(moveComputer)) {
             return 0;
 
@@ -60,7 +61,10 @@ public class WinChecker {
         } else if (moveUser.equals("5") && moveComputer.equals("2")) {
             return 2;
 
-        } else if (moveUser.equals("1") && moveComputer.equals("5")) {
+        } else if (moveUser.equals("4") && moveComputer.equals("1")) {
+            return 2;
+
+        }else if (moveUser.equals("1") && moveComputer.equals("5")) {
             return 2;
 
         }

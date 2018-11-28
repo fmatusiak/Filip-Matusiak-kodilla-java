@@ -5,10 +5,11 @@ public class Results {
     User user;
     Computer computer;
 
-    public Results(User user, Computer computer){
+    public Results(User user, Computer computer) {
         this.user = user;
         this.computer = computer;
     }
+
 
     public void showResultsTie() {
         System.out.println(" ");

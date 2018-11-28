@@ -25,7 +25,6 @@ public class Game {
 
     public void makeAMove() {
         MoveChecker moveChecker = new MoveChecker();
-
         boolean end = false;
 
         do {
@@ -47,14 +46,11 @@ public class Game {
                 makeAMove();
             }
             end = checkNumbersRound();
-
             mainMenu.showInstruction();
 
         }
         while (!end);
-
         checkResultGame(user, computer);
-
         ChoiceAtTheEndOfGame();
 
     }
@@ -129,8 +125,8 @@ public class Game {
     public void checkResultGame(User user, Computer computer) {
         ResultChecker resultChecker = new ResultChecker();
         int resultGame = resultChecker.checkResultGame(user, computer);
-
         System.out.println("#### END GAME ####");
+
         if (resultGame == 0) {
             results.showResultsTie();
         } else if (resultGame == 1) {
@@ -138,8 +134,8 @@ public class Game {
         } else if (resultGame == 2) {
             results.showResultsWinnerComputer();
         }
-    }
 
+    }
 
 }
 
