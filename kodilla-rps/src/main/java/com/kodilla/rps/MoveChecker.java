@@ -15,10 +15,7 @@ public class MoveChecker {
         moveValue.add("x");
         moveValue.add("n");
 
-        if (moveValue.contains(moveUser)) {
-            return true;
-        } else
-            return false;
+        return moveValue.contains(moveUser);
     }
 
 }

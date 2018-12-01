@@ -2,11 +2,11 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public class User implements Points {
+public class User{
     private String userName;
     private int pointUser;
 
-    @Override
+
     public int getPoints() {
         return pointUser;
     }

@@ -10,7 +10,6 @@ public class Results {
         this.computer = computer;
     }
 
-
     public void showResultsTie() {
         System.out.println(" ");
         System.out.println("!!!!! TIE  !!!!!");
