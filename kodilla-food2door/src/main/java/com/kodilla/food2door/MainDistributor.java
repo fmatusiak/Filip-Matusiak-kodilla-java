@@ -1,4 +1,4 @@
-package com.kodilla.food2door.distributor;
+package com.kodilla.food2door;
 
 import com.kodilla.food2door.foodcompany.ExtraFoodShop;
 import com.kodilla.food2door.foodcompany.FoodProducer;
