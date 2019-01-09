@@ -11,15 +11,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainDistributor {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Map<String, Integer> productsList = new HashMap<>();
 
-        productsList.put("Vegetables",10);
-        productsList.put("Meat" , 20);
+        productsList.put("Vegetables", 10);
+        productsList.put("Meat", 20);
         productsList.put("Fruit", 30);
 
-        FoodProducer extraFoodShop = new ExtraFoodShop("ExtraFoodShop",productsList);
+        FoodProducer extraFoodShop = new ExtraFoodShop("ExtraFoodShop", productsList);
         FoodProducer healthyShop = new HealthyShop("Healthy", productsList);
         FoodProducer glutenFreeShop = new GlutenFreeShop("GlutenFreeShop", productsList);
 
@@ -33,8 +33,6 @@ public class MainDistributor {
 
         Order glutenFreeShopOrder = orderService.makeOrder(glutenFreeShop);
         glutenFreeShop.process(glutenFreeShopOrder);
-
-
 
     }
 }
