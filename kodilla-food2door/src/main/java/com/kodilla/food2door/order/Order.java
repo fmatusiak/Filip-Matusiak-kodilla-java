@@ -1,8 +1,5 @@
 package com.kodilla.food2door.order;
 
-import com.kodilla.food2door.foodcompany.FoodProducer;
-
-import java.util.ArrayList;
 import java.util.Map;
 
 public class Order {
@@ -13,8 +10,8 @@ public class Order {
         this.orderProducts = orderProducts;
     }
 
-    public void showProductsOrders(){
-        for(Map.Entry products : orderProducts.entrySet()){
+    public void showProductsOrders() {
+        for (Map.Entry products : orderProducts.entrySet()) {
             System.out.println("Name: " + products.getKey() + " , Values: " + products.getValue());
         }
     }

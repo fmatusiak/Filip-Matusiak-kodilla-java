@@ -9,11 +9,10 @@ public class OrderService {
 
     private Map<String, Integer> orderProducts;
 
-    public Order makeOrder(FoodProducer foodProducer) {
-        orderProducts = new HashMap<>(foodProducer.getProducts());
+    public Order createOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
 
-        if (checkOrder(foodProducer.getProducts(), orderProducts)) {
-            return new Order(orderProducts);
+        if (checkOrder(listOrderProducts, foodProducer)) {
+            return new Order(listOrderProducts);
         }
 
         Map<String, Integer> emptyOrder = new HashMap<>();
@@ -21,8 +20,9 @@ public class OrderService {
         return new Order(emptyOrder);
     }
 
-    private boolean checkOrder(Map<String, Integer> listFoodProducerProducts, Map<String, Integer> listOrderProducts) {
-        if (listOrderProducts.equals(listFoodProducerProducts)) {
+    private boolean checkOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
+
+        if (foodProducer.getProducts().equals(listOrderProducts)) {
             return true;
         }
         return false;
