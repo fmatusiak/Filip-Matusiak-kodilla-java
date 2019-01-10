@@ -1,5 +1,7 @@
 package flights;
 
+import city.City;
+
 import java.util.ArrayList;
 
 public class FlightList {
@@ -10,7 +12,7 @@ public class FlightList {
         return flightsList.add(flight);
     }
 
-    public boolean addAllFlightsList(ArrayList<Flight> flightsList) {
+    public boolean addAllFlightsList(ArrayList<City> flightsList) {
         return flightsList.addAll(flightsList);
     }
 
