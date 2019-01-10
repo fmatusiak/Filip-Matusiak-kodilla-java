@@ -1,4 +1,4 @@
-package com.kodilla.food2door.foodcompany;
+package foodcompany;
 
 
 import com.kodilla.food2door.order.Order;

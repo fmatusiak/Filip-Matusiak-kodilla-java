@@ -1,11 +1,11 @@
 package com.kodilla.food2door;
 
-import com.kodilla.food2door.foodcompany.ExtraFoodShop;
-import com.kodilla.food2door.foodcompany.FoodProducer;
-import com.kodilla.food2door.foodcompany.GlutenFreeShop;
-import com.kodilla.food2door.foodcompany.HealthyShop;
 import com.kodilla.food2door.order.Order;
 import com.kodilla.food2door.order.OrderService;
+import foodcompany.ExtraFoodShop;
+import foodcompany.FoodProducer;
+import foodcompany.GlutenFreeShop;
+import foodcompany.HealthyShop;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,3 +38,4 @@ public class Food2DoorRunner {
 
     }
 }
+

@@ -27,7 +27,7 @@ public class CalculationsStatisticsTestSuite {
         averageCommentsOnPosts = statisticsCalculator.getAverageCommentsOnPosts();
 
         //Then
-        Assert.assertEquals(1, averageCommentsOnPosts);
+        Assert.assertEquals(0, averageCommentsOnPosts);
 
     }
 

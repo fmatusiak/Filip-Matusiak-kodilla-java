@@ -1,6 +1,6 @@
 package com.kodilla.food2door.order;
 
-import com.kodilla.food2door.foodcompany.FoodProducer;
+import foodcompany.FoodProducer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,9 +21,6 @@ public class OrderService {
     }
 
     private boolean checkOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
-        if (foodProducer.getProducts().equals(listOrderProducts)) {
-            return true;
-        }
-        return false;
+        return foodProducer.getProducts().equals(listOrderProducts);
     }
 }

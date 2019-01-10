@@ -98,11 +98,7 @@ public class Game {
     }
 
     public boolean checkNumbersRound() {
-        if (round.getNumberOfRounds() == computer.getPoints() || round.getNumberOfRounds() == user.getPoints()) {
-            return true;
-        } else {
-            return false;
-        }
+        return round.getNumberOfRounds() == computer.getPoints() || round.getNumberOfRounds() == user.getPoints();
 
     }
 

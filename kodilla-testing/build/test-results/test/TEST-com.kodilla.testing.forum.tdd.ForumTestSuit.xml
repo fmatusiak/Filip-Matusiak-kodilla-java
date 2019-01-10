@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuit" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-01-10T14:47:56" hostname="elliot" time="0.006">
+<testsuite name="com.kodilla.testing.forum.tdd.ForumTestSuit" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-01-10T14:55:03" hostname="elliot" time="0.004">
   <properties/>
-  <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.002"/>
-  <testcase name="testAddPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.0"/>
-  <testcase name="testGetPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.001"/>
+  <testcase name="testRemovePostNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.001"/>
+  <testcase name="testAddPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.001"/>
+  <testcase name="testGetPost" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.0"/>
   <testcase name="testRemoveCommentNotExisting" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.001"/>
   <testcase name="testRemoveComment" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.0"/>
   <testcase name="testRemovePost" classname="com.kodilla.testing.forum.tdd.ForumTestSuit" time="0.0"/>

@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RpsTestSuite" tests="30" skipped="0" failures="0" errors="0" timestamp="2019-01-02T15:31:20" hostname="elliot" time="0.013">
+<testsuite name="RpsTestSuite" tests="30" skipped="0" failures="0" errors="0" timestamp="2019-01-10T21:25:47" hostname="elliot" time="0.009">
   <properties/>
-  <testcase name="testPlayerMoveRockAndComputerMoveLizard" classname="RpsTestSuite" time="0.003"/>
+  <testcase name="testPlayerMoveRockAndComputerMoveLizard" classname="RpsTestSuite" time="0.001"/>
   <testcase name="testPlayerMoveSpockAndComputerMoveRock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testComputerResultPoint0" classname="RpsTestSuite" time="0.0"/>
-  <testcase name="testComputerResultPoint1" classname="RpsTestSuite" time="0.0"/>
+  <testcase name="testComputerResultPoint1" classname="RpsTestSuite" time="0.001"/>
   <testcase name="testPlayerMoveScissorsAndComputerMoveRock" classname="RpsTestSuite" time="0.0"/>
-  <testcase name="testUserResultPoint1" classname="RpsTestSuite" time="0.001"/>
+  <testcase name="testUserResultPoint1" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveLizardAndComputerMoveRock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMovePaperAndComputerMoveScissors" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveSpockAndComputerMoveLizard" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveSpockAndComputerMovePaper" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveSpockAndComputerMoveSpock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveScissorsAndComputerMoveLizard" classname="RpsTestSuite" time="0.0"/>
-  <testcase name="testPlayerMoveLizardAndComputerMoveLizard" classname="RpsTestSuite" time="0.0"/>
+  <testcase name="testPlayerMoveLizardAndComputerMoveLizard" classname="RpsTestSuite" time="0.001"/>
   <testcase name="testPlayerMoveSpockAndComputerMoveScissors" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerResultPoint0" classname="RpsTestSuite" time="0.0"/>
-  <testcase name="testPlayerResultPoint1" classname="RpsTestSuite" time="0.001"/>
+  <testcase name="testPlayerResultPoint1" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveScissorsAndComputerMoveScissors" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveLizardAndComputerMoveScissors" classname="RpsTestSuite" time="0.0"/>
-  <testcase name="testPlayerMoveLizardAndComputerMovePaper" classname="RpsTestSuite" time="0.0"/>
+  <testcase name="testPlayerMoveLizardAndComputerMovePaper" classname="RpsTestSuite" time="0.001"/>
   <testcase name="testPlayerMoveLizardAndComputerMoveSpock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMovePaperAndComputerMovePaper" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMovePaperAndComputerMoveSpock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMovePaperAndComputerMoveLizard" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveRockAndComputerMovePaper" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveRockAndComputerMoveSpock" classname="RpsTestSuite" time="0.0"/>
-  <testcase name="testPlayerMoveScissorsAndComputerMovePaper" classname="RpsTestSuite" time="0.001"/>
+  <testcase name="testPlayerMoveScissorsAndComputerMovePaper" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveScissorsAndComputerMoveSpock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMovePaperAndComputerMoveRock" classname="RpsTestSuite" time="0.0"/>
   <testcase name="testPlayerMoveRockAndComputerMoveScissors" classname="RpsTestSuite" time="0.0"/>

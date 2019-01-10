@@ -8,7 +8,7 @@ import com.kodilla.exception.io.FileReaderWithoutHandling;
 import java.io.IOException;
 
 public class ExceptionModuleRunner {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         FileReader filereader = new FileReader();
         try{
             filereader.readFile();
