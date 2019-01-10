@@ -2,6 +2,8 @@ package com.kodilla.food2door;
 
 import com.kodilla.food2door.foodcompany.ExtraFoodShop;
 import com.kodilla.food2door.foodcompany.FoodProducer;
+import com.kodilla.food2door.foodcompany.GlutenFreeShop;
+import com.kodilla.food2door.foodcompany.HealthyShop;
 import com.kodilla.food2door.order.Order;
 import com.kodilla.food2door.order.OrderService;
 
@@ -16,8 +18,8 @@ public class Food2DoorRunner {
         listProducts.put("Meat", 20);
 
         FoodProducer extraFoodShop = new ExtraFoodShop("extraFoodShop", listProducts);
-        FoodProducer healthyShop = new ExtraFoodShop("healthyShop", listProducts);
-        FoodProducer glutenFreeShop = new ExtraFoodShop("glutenFreeShop", listProducts);
+        FoodProducer healthyShop = new HealthyShop("healthyShop", listProducts);
+        FoodProducer glutenFreeShop = new GlutenFreeShop("glutenFreeShop", listProducts);
 
         Map<String, Integer> listOrderProducts = new HashMap<>();
         listOrderProducts.put("Fruit", 10);

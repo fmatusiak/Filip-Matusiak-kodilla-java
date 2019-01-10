@@ -14,12 +14,10 @@ public class HealthyShop extends FoodProducer {
 
     @Override
     public void process(Order order) {
-
         if (!order.getOrderProducts().isEmpty()) {
             Random random = new Random();
             System.out.println("Order sent " + random.nextInt(10) + " :");
             order.showProductsOrders();
-
         } else {
             System.out.println("Order not sent");
         }

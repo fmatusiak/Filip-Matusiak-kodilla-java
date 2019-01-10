@@ -21,7 +21,6 @@ public class OrderService {
     }
 
     private boolean checkOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
-
         if (foodProducer.getProducts().equals(listOrderProducts)) {
             return true;
         }
