@@ -4,4 +4,6 @@ include 'kodilla-stream'
 include 'kodilla-rps'
 include 'kodilla-exception'
 include 'kodilla-food2door'
+include 'kodilla-challenges'
+findProject(':kodilla-challenges')?.name = 'challenges'
 
