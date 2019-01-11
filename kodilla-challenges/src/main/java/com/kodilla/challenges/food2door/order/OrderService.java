@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class OrderService {
 
-    private Map<String, Integer> orderProducts;
+    private Map<String, Integer> orderProducts = new HashMap<>();
 
     public Order createOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
 
         if (!checkOrder(listOrderProducts, foodProducer).isEmpty()) {
-            return new Order(listOrderProducts);
+            return new Order(orderProducts);
         }
 
         Map<String, Integer> emptyOrder = new HashMap<>();
@@ -26,12 +26,11 @@ public class OrderService {
 
         for (Map.Entry<String, Integer> orderProduct : listOrderProducts.entrySet()) {
             if (foodProducer.getProducts().containsKey(orderProduct.getKey()) && foodProducer.getProducts().containsValue(orderProduct.getValue())) {
-                listRemoveProducts.put(orderProduct.getKey(), orderProduct.getValue());
+                orderProducts.put(orderProduct.getKey(), orderProduct.getValue());
             } else {
                 System.out.println("Not product: " + orderProduct.getKey() + " - " + orderProduct.getValue() + " " + " in " + foodProducer.getName());
             }
         }
-
-        return listRemoveProducts;
+        return orderProducts;
     }
 }
