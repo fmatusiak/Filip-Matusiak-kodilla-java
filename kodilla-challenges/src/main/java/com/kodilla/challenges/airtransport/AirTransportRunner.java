@@ -28,7 +28,8 @@ public class AirTransportRunner {
 
         FlightFind flightFind = new FlightFind();
 
-        flightFind.findFlight(flightList, gdansk, warsaw);
+        flightFind.findFlightsFromCity(flightList,warsaw);
+        flightFind.findFlightsToCity(flightList,wroclaw);
 
     }
 }

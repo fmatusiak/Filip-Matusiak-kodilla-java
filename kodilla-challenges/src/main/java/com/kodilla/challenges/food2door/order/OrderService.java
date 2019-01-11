@@ -11,7 +11,7 @@ public class OrderService {
 
     public Order createOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
 
-        if (checkOrder(listOrderProducts, foodProducer)) {
+        if (!checkOrder(listOrderProducts, foodProducer).isEmpty()) {
             return new Order(listOrderProducts);
         }
 
@@ -20,7 +20,18 @@ public class OrderService {
         return new Order(emptyOrder);
     }
 
-    private boolean checkOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
-        return foodProducer.getProducts().equals(listOrderProducts);
+    private Map<String, Integer> checkOrder(Map<String, Integer> listOrderProducts, FoodProducer foodProducer) {
+
+        Map<String, Integer> listRemoveProducts = new HashMap<>();
+
+        for (Map.Entry<String, Integer> orderProduct : listOrderProducts.entrySet()) {
+            if (foodProducer.getProducts().containsKey(orderProduct.getKey()) && foodProducer.getProducts().containsValue(orderProduct.getValue())) {
+                listRemoveProducts.put(orderProduct.getKey(), orderProduct.getValue());
+            } else {
+                System.out.println("Not product: " + orderProduct.getKey() + " - " + orderProduct.getValue() + " " + " in " + foodProducer.getName());
+            }
+        }
+
+        return listRemoveProducts;
     }
 }
