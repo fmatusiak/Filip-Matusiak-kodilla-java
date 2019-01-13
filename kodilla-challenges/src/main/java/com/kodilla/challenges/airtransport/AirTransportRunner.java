@@ -16,22 +16,21 @@ public class AirTransportRunner {
         City zakopane = new City("Zakopane");
 
         Flight gdanskToWarsaw = new Flight(gdansk, warsaw);
-        Flight gdanskToWroclaw = new Flight(gdansk, wroclaw);
-
         Flight warsawToGdansk = new Flight(warsaw, gdansk);
         Flight warsawToZakopane = new Flight(warsaw, zakopane);
-        Flight warsawToWroclaw = new Flight(warsaw,wroclaw);
+        Flight warsawToWroclaw = new Flight(warsaw, wroclaw);
 
         flightList.addOneFlight(gdanskToWarsaw);
-        flightList.addOneFlight(gdanskToWroclaw);
         flightList.addOneFlight(warsawToGdansk);
         flightList.addOneFlight(warsawToZakopane);
         flightList.addOneFlight(warsawToWroclaw);
 
-        FlightFind flightFind = new FlightFind();
+        FlightFind flightFind = new FlightFind(flightList);
 
-        flightFind.findFlightsFromCity(flightList,warsaw);
-        flightFind.findFlightsToCity(flightList,wroclaw);
+        flightFind.findFlightsFromCity(warsaw);
+        flightFind.findFlightsToCity(wroclaw);
+        flightFind.findFlightsWithInterChange(gdansk, wroclaw);
+
 
     }
 }
