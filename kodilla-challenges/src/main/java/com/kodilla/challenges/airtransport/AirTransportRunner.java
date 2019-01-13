@@ -20,11 +20,13 @@ public class AirTransportRunner {
 
         Flight warsawToGdansk = new Flight(warsaw, gdansk);
         Flight warsawToZakopane = new Flight(warsaw, zakopane);
+        Flight warsawToWroclaw = new Flight(warsaw,wroclaw);
 
         flightList.addOneFlight(gdanskToWarsaw);
         flightList.addOneFlight(gdanskToWroclaw);
         flightList.addOneFlight(warsawToGdansk);
         flightList.addOneFlight(warsawToZakopane);
+        flightList.addOneFlight(warsawToWroclaw);
 
         FlightFind flightFind = new FlightFind();
 
