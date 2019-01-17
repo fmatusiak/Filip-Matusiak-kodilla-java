@@ -13,14 +13,24 @@ public class LibraryTestSuite {
     public void testGetBooks() throws CloneNotSupportedException {
         //Given
         Book book = new Book("elvis", "gibson", LocalDate.now());
+        Book book1 = new Book("ewa", "farna", LocalDate.now());
+        Book book2 = new Book("mario", "bischin", LocalDate.now());
+
         Library library = new Library("book");
         library.getBooks().add(book);
-
-        Book book1 = book.shallowCopy();
-        Library library1 = new Library("book1");
         library.getBooks().add(book1);
+        library.getBooks().add(book2);
+
+        Library libraryDeep = library.deepCopy();
+        Library libraryShallow = library.shallowCopy();
 
         //When
-        Assert.assertEquals(true, library.getBooks().containsAll(library1.getBooks()));
+        library.getBooks().remove(book);
+        libraryDeep.getBooks().remove(book);
+
+        //Then
+        Assert.assertEquals(libraryShallow.getBooks(), library.getBooks());
+        Assert.assertEquals(libraryDeep.getBooks(), library.getBooks());
+
     }
 }
