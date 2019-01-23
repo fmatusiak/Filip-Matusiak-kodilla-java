@@ -102,19 +102,7 @@ public final class Bigmac {
             if (ingredients == null) {
                 throw new IllegalStateException("No choose ingredients");
             }
-
-            if (!(ingredients.contains(SALAD)
-                    || ingredients.contains(ONION)
-                    || ingredients.contains(BECON)
-                    || ingredients.contains(CUCUMBER)
-                    || ingredients.contains(PEPPERS)
-                    || ingredients.contains(CHILLI)
-                    || ingredients.contains(MUSHROOMS)
-                    || ingredients.contains(SHRIMP)
-                    || ingredients.contains(CHEESE))) {
-                throw new IllegalStateException("you choose wrong ingredients");
-            }
-
+            
             return new Bigmac(bun, burgers, sauce, ingredients);
         }
     }
