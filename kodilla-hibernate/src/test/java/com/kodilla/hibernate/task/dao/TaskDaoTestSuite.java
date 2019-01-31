@@ -20,7 +20,7 @@ public class TaskDaoTestSuite {
     @Test
     public void testTaskDaoSave() {
         //Given
-        Task task = new Task(DESCRIPTION, 7);
+        Task task = new Task(DESCRIPTION,7);
 
         //When
         taskDao.save(task);
@@ -28,11 +28,10 @@ public class TaskDaoTestSuite {
         //Then
         int id = task.getId();
         Task readTask = taskDao.findOne(id);
-        Assert.assertEquals(id, readTask);
+        Assert.assertEquals(id, readTask.getId());
 
         //CleanUp
         taskDao.delete(id);
-
 
     }
 }
