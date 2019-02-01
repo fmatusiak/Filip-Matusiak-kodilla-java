@@ -4,7 +4,6 @@ import com.kodilla.hibernate.tasklist.TaskList;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
