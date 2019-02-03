@@ -13,10 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
+@Transactional
 @SpringBootTest
 public class InvoiceDaoTestSuite {
 
@@ -61,8 +63,8 @@ public class InvoiceDaoTestSuite {
         Assert.assertEquals(1, productList.size());
         Assert.assertEquals(1, itemList.size());
 
-        //CleanUp
-        invoiceDao.delete(invoice);
+       /* //CleanUp
+        invoiceDao.delete(invoice);*/
     }
 
 }
