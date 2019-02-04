@@ -4,6 +4,12 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQuery(
+        name = "Company.findCompanyForParameter",
+        query = "SELECT * FROM companies WHERE company_name LIKE concat(:COMPANY_NAME,'%')",
+        resultClass = Company.class
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
