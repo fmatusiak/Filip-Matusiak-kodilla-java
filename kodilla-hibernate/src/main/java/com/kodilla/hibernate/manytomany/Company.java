@@ -4,11 +4,15 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name = "Company.findCompanyForParameter",
-        query = "SELECT * FROM companies WHERE company_name LIKE concat(substring(:COMPANY_NAME,0,3),'%')",
-        resultClass = Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(name = "Company.findCompanyForParameter",
+                query = "SELECT * FROM companies WHERE company_name LIKE concat(substring(:COMPANY_NAME,0,3),'%')",
+                resultClass = Company.class),
+
+        @NamedNativeQuery(name = "Company.findCompanyForName",
+                query = "SELECT * FROM companies WHERE company_name LIKE :%COMPANY_NAME%",
+                resultClass = Company.class),
+})
 
 @Entity
 @Table(name = "COMPANIES")
