@@ -6,7 +6,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.findCompanyForParameter",
-        query = "SELECT * FROM companies WHERE company_name LIKE concat(:COMPANY_NAME,'%')",
+        query = "SELECT * FROM companies WHERE company_name LIKE concat(substring(:COMPANY_NAME,0,3),'%')",
         resultClass = Company.class
 )
 
