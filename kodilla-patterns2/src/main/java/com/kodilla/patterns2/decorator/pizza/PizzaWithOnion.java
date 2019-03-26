@@ -13,7 +13,7 @@ public class PizzaWithOnion extends AbstractPizzaOrderDecorator {
     }
 
     @Override
-    public String titlePizza() {
-        return super.titlePizza() + " + onion";
+    public String getTitlePizza() {
+        return super.getTitlePizza() + " + onion";
     }
 }

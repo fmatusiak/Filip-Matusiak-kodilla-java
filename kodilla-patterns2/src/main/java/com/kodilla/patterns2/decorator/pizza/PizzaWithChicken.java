@@ -13,7 +13,7 @@ public class PizzaWithChicken extends AbstractPizzaOrderDecorator {
     }
 
     @Override
-    public String titlePizza() {
-        return super.titlePizza() + " + chicken";
+    public String getTitlePizza() {
+        return super.getTitlePizza() + " + chicken";
     }
 }

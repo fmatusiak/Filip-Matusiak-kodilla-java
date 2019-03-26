@@ -11,7 +11,7 @@ public class BasicPizza implements PizzaOrder {
     }
 
     @Override
-    public String titlePizza() {
+    public String getTitlePizza() {
         return "Basic pizza";
     }
 

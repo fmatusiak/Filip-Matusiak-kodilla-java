@@ -62,4 +62,46 @@ public class PizzaOrderTestSuite {
         assertEquals(new BigDecimal(23.0), cost);
     }
 
+    @Test
+    public void testBasicPizzaWithHamAndChickenAndOnionGetDescription() {
+        //Given
+        PizzaOrder pizzaOrder = new BasicPizza();
+        pizzaOrder = new PizzaWithChicken(pizzaOrder);
+        pizzaOrder = new PizzaWithHam(pizzaOrder);
+        pizzaOrder = new PizzaWithOnion(pizzaOrder);
+
+        //When
+        String description = pizzaOrder.getTitlePizza();
+
+        //Then
+        assertEquals("Basic pizza + chicken + ham + onion", description);
+    }
+
+    @Test
+    public void testBasicPizzaWithHamAndChickenGetDescription() {
+        //Given
+        PizzaOrder pizzaOrder = new BasicPizza();
+        pizzaOrder = new PizzaWithChicken(pizzaOrder);
+        pizzaOrder = new PizzaWithHam(pizzaOrder);
+
+        //When
+        String description = pizzaOrder.getTitlePizza();
+
+        //Then
+        assertEquals("Basic pizza + chicken + ham", description);
+    }
+
+    @Test
+    public void testBasicPizzaWithHamGetDescription() {
+        //Given
+        PizzaOrder pizzaOrder = new BasicPizza();
+        pizzaOrder = new PizzaWithHam(pizzaOrder);
+
+        //When
+        String description = pizzaOrder.getTitlePizza();
+
+        //Then
+        assertEquals("Basic pizza + ham", description);
+    }
+
 }

@@ -13,7 +13,7 @@ public class PizzaWithHam extends AbstractPizzaOrderDecorator {
     }
 
     @Override
-    public String titlePizza() {
-        return super.titlePizza() + " + ham";
+    public String getTitlePizza() {
+        return super.getTitlePizza() + " + ham";
     }
 }
