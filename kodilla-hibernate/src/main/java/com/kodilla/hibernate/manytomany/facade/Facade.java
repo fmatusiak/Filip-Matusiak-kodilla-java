@@ -9,7 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class Facade {
@@ -22,34 +24,29 @@ public class Facade {
     @Autowired
     private EmployeeDao employeeDao;
 
-    public void findCompanyForName(String companyName) throws Exception{
+    public List<Company> findCompanyForName(String companyName) throws Exception {
         List<Company> listCompany = companyDao.findCompanyForName(companyName);
-
         LOGGER.info("I find company ... Please wait");
-        if (listCompany.isEmpty()) {
-            LOGGER.info("Dont find copmany ");
-        }
         LOGGER.info("List with your patterns have a " + listCompany.size() + " size");
 
         LOGGER.info("List company : ");
         for (Company company : listCompany) {
             LOGGER.info(company.getName());
         }
+        return Optional.ofNullable(listCompany).orElse(new ArrayList<>());
     }
 
-    public void findEmployeeForFirstName(String firstName) throws Exception{
+    public List<Employee> findEmployeeForFirstName(String firstName) throws Exception {
         List<Employee> listEmployee = employeeDao.findForName(firstName);
 
         LOGGER.info("I find employee ... Please wait");
-        if (listEmployee.isEmpty()) {
-            LOGGER.info("Dont find empolyee ");
-        }
         LOGGER.info("List with your patterns have a " + listEmployee.size() + " size");
-
         LOGGER.info("List employee : ");
+
         for (Employee employee : listEmployee) {
             LOGGER.info(employee.getFirstname() + " " + employee.getLastname());
         }
+        return Optional.ofNullable(listEmployee).orElse(new ArrayList<>());
     }
 
 }
