@@ -9,9 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class Facade {
@@ -33,7 +31,7 @@ public class Facade {
         for (Company company : listCompany) {
             LOGGER.info(company.getName());
         }
-        return Optional.ofNullable(listCompany).orElse(new ArrayList<>());
+        return listCompany;
     }
 
     public List<Employee> findEmployeeForFirstName(String firstName) throws Exception {
@@ -46,7 +44,7 @@ public class Facade {
         for (Employee employee : listEmployee) {
             LOGGER.info(employee.getFirstname() + " " + employee.getLastname());
         }
-        return Optional.ofNullable(listEmployee).orElse(new ArrayList<>());
+        return listEmployee;
     }
 
 }
