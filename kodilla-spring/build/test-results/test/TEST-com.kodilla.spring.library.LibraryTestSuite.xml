@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.spring.library.LibraryTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-01-29T20:29:01" hostname="elliot" time="0.712">
-  <properties/>
-  <testcase name="testSaveToDb" classname="com.kodilla.spring.library.LibraryTestSuite" time="0.509"/>
-  <testcase name="testLoadFromDb" classname="com.kodilla.spring.library.LibraryTestSuite" time="0.112"/>
-  <testcase name="testContext" classname="com.kodilla.spring.library.LibraryTestSuite" time="0.089"/>
-  <system-out><![CDATA[2019-01-29 21:29:01.321  INFO 5468 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.spring.library.LibraryTestSuite], using SpringBootContextLoader
+<testsuite name="com.kodilla.spring.library.LibraryTestSuite" tests="3" skipped="0" failures="0" errors="0"
+           timestamp="2019-01-29T20:29:01" hostname="elliot" time="0.712">
+    <properties/>
+    <testcase name="testSaveToDb" classname="com.kodilla.spring.library.LibraryTestSuite" time="0.509"/>
+    <testcase name="testLoadFromDb" classname="com.kodilla.spring.library.LibraryTestSuite" time="0.112"/>
+    <testcase name="testContext" classname="com.kodilla.spring.library.LibraryTestSuite" time="0.089"/>
+    <system-out><![CDATA[2019-01-29 21:29:01.321  INFO 5468 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.spring.library.LibraryTestSuite], using SpringBootContextLoader
 2019-01-29 21:29:01.322  INFO 5468 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kodilla.spring.library.LibraryTestSuite]: no resource found for suffixes {-context.xml, Context.groovy}.
 2019-01-29 21:29:01.322  INFO 5468 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kodilla.spring.library.LibraryTestSuite]: LibraryTestSuite does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 2019-01-29 21:29:01.330  INFO 5468 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kodilla.spring.library.LibraryConfig for test class com.kodilla.spring.library.LibraryTestSuite
@@ -73,5 +74,5 @@ taskSchedulerBuilder
 spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties
 << ===== Beans list ====
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+    <system-err><![CDATA[]]></system-err>
 </testsuite>

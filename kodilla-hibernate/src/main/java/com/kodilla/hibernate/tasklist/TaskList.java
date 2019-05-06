@@ -50,6 +50,10 @@ public class TaskList {
         return description;
     }
 
+    private void setDescription(String description) {
+        this.description = description;
+    }
+
     @OneToMany(
             targetEntity = Task.class,
             mappedBy = "taskList",
@@ -62,9 +66,5 @@ public class TaskList {
 
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
-    }
-
-    private void setDescription(String description) {
-        this.description = description;
     }
 }

@@ -46,7 +46,7 @@ public class TaskListDaoTestSuite {
     }
 
     @Test
-    public void testTaskListDaoSaveWithTasks(){
+    public void testTaskListDaoSaveWithTasks() {
         //Given
         Task task = new Task("Test: Learn Hibernate", 14);
         Task task2 = new Task("Test: Write some entities", 3);
@@ -68,10 +68,10 @@ public class TaskListDaoTestSuite {
         int id = taskList.getId();
 
         //Then
-        Assert.assertEquals(0,id);
+        Assert.assertEquals(0, id);
 
         //CleanUp
-         taskListDao.delete(taskList);
+        taskListDao.delete(taskList);
     }
 
 

@@ -8,12 +8,12 @@ public class ChildSeatDecorator extends AbstractTaxiOrderDecorator {
     }
 
     @Override
-    public BigDecimal getCost(){
+    public BigDecimal getCost() {
         return super.getCost().add(new BigDecimal(2.0));
     }
 
     @Override
-    public String getDescription(){
+    public String getDescription() {
         return super.getDescription() + " + child seat";
     }
 }

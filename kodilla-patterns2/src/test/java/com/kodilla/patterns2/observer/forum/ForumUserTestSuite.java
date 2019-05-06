@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ForumUserTestSuite {
 
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         //Given
         ForumTopic javaHelpForum = new JavaHelpForumTopic();
         ForumTopic javaToolsForum = new JavaToolsForumTopic();
@@ -29,8 +29,8 @@ public class ForumUserTestSuite {
         javaToolsForum.addPost("When I try to log in I got 'bad credientalis' message.");
 
         //Then
-        assertEquals(3,johnSmith.getUpdateCount());
-        assertEquals(2,ivoneEscobar.getUpdateCount());
-        assertEquals(5,jessiePinkman.getUpdateCount());
+        assertEquals(3, johnSmith.getUpdateCount());
+        assertEquals(2, ivoneEscobar.getUpdateCount());
+        assertEquals(5, jessiePinkman.getUpdateCount());
     }
 }

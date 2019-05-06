@@ -37,7 +37,7 @@ public class LibraryTestSuite {
     }
 
     @Test
-    public void testContext(){
+    public void testContext() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
 

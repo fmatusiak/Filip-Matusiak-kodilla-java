@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private ProductService productService;
     private final List<Item> items = new ArrayList<>();
     private final Long orderId;
     private final Long userId;
+    private ProductService productService;
     private boolean isPaid = false;
     private boolean isVerifed = false;
     private boolean isSubmitted = false;
@@ -19,24 +19,12 @@ public class Order {
         this.userId = userId;
     }
 
-    public BigDecimal calcualateValue(){
+    public BigDecimal calcualateValue() {
         BigDecimal sum = BigDecimal.ZERO;
-        for(Item item : items){
+        for (Item item : items) {
             sum = sum.add(productService.getPrice(item.getProductId())).multiply(new BigDecimal(item.getQty()));
         }
         return sum;
-    }
-
-    public void setPaid(boolean paid) {
-        isPaid = paid;
-    }
-
-    public void setVerifed(boolean verifed) {
-        isVerifed = verifed;
-    }
-
-    public void setSubmitted(boolean submitted) {
-        isSubmitted = submitted;
     }
 
     public ProductService getProductService() {
@@ -59,11 +47,23 @@ public class Order {
         return isPaid;
     }
 
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
+
     public boolean isVerifed() {
         return isVerifed;
     }
 
+    public void setVerifed(boolean verifed) {
+        isVerifed = verifed;
+    }
+
     public boolean isSubmitted() {
         return isSubmitted;
+    }
+
+    public void setSubmitted(boolean submitted) {
+        isSubmitted = submitted;
     }
 }

@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class FileReaderWithoutHandling {
-    public void readFile() throws IOException{
+    public void readFile() throws IOException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file/names.txt").getFile());
         Stream<String> fileLines = Files.lines(Paths.get(file.getPath()));

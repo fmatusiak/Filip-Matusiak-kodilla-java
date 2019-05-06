@@ -12,11 +12,11 @@ import java.util.Date;
                 query = "FROM Task WHERE duration > 10"
         ),
         @NamedQuery(
-                name= "Task.retrieveShortTasks",
+                name = "Task.retrieveShortTasks",
                 query = "FROM Task WHERE duration <= 10"
         ),
         @NamedQuery(
-                name="Task.retrieveTasksWithDurationLongerThan",
+                name = "Task.retrieveTasksWithDurationLongerThan",
                 query = "FROM Task WHERE duration > :DURATION"
         )
 })
@@ -55,26 +55,46 @@ public final class Task {
         return id;
     }
 
+    private void setId(int id) {
+        this.id = id;
+    }
+
     @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
 
+    private void setDescription(String description) {
+        this.description = description;
+    }
+
     @NotNull
-    @Column(name="CREATED")
+    @Column(name = "CREATED")
     public Date getCreated() {
         return created;
     }
 
-    @Column(name="DURATION")
+    private void setCreated(Date created) {
+        this.created = created;
+    }
+
+    @Column(name = "DURATION")
     public int getDuration() {
         return duration;
+    }
+
+    private void setDuration(int duration) {
+        this.duration = duration;
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "TASKS_FINANCIALAS_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
+    }
+
+    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
+        this.taskFinancialDetails = taskFinancialDetails;
     }
 
     @ManyToOne
@@ -85,25 +105,5 @@ public final class Task {
 
     public void setTaskList(TaskList taskList) {
         this.taskList = taskList;
-    }
-
-    public void setTaskFinancialDetails(TaskFinancialDetails taskFinancialDetails) {
-        this.taskFinancialDetails = taskFinancialDetails;
-    }
-
-    private void setId(int id) {
-        this.id = id;
-    }
-
-    private void setDescription(String description) {
-        this.description = description;
-    }
-
-    private void setCreated(Date created) {
-        this.created = created;
-    }
-
-    private void setDuration(int duration) {
-        this.duration = duration;
     }
 }

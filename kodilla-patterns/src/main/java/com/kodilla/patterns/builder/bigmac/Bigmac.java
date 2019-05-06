@@ -102,7 +102,7 @@ public final class Bigmac {
             if (ingredients == null) {
                 throw new IllegalStateException("No choose ingredients");
             }
-            
+
             return new Bigmac(bun, burgers, sauce, ingredients);
         }
     }

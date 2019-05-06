@@ -40,7 +40,7 @@ public class FacadeTestSuite {
 
         try {
             companyList = facade.findCompanyForName("oo");
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
@@ -52,18 +52,18 @@ public class FacadeTestSuite {
     }
 
     @Test
-    public void testFindEmployeeForName(){
+    public void testFindEmployeeForName() {
         //Given
         List<Employee> employeeList = new ArrayList<>();
-        Employee employee = new Employee("edward","acki");
+        Employee employee = new Employee("edward", "acki");
         Employee employee1 = new Employee("natalio", "gonzalez");
 
         employeeDao.save(employee);
         employeeDao.save(employee1);
 
-        try{
+        try {
             employeeList = facade.findEmployeeForFirstName("war");
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 

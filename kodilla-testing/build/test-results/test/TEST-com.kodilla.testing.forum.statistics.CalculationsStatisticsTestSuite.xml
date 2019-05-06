@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-01-10T14:55:03" hostname="elliot" time="0.105">
-  <properties/>
-  <testcase name="testCalculateCommentsOnPosts" classname="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" time="0.103"/>
-  <testcase name="testCalculateCommentsOnUsers" classname="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" time="0.0"/>
-  <testcase name="testCalculatePostsBiggerComment" classname="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+<testsuite name="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" tests="3" skipped="0"
+           failures="0" errors="0" timestamp="2019-01-10T14:55:03" hostname="elliot" time="0.105">
+    <properties/>
+    <testcase name="testCalculateCommentsOnPosts"
+              classname="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" time="0.103"/>
+    <testcase name="testCalculateCommentsOnUsers"
+              classname="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" time="0.0"/>
+    <testcase name="testCalculatePostsBiggerComment"
+              classname="com.kodilla.testing.forum.statistics.CalculationsStatisticsTestSuite" time="0.001"/>
+    <system-out><![CDATA[]]></system-out>
+    <system-err><![CDATA[]]></system-err>
 </testsuite>

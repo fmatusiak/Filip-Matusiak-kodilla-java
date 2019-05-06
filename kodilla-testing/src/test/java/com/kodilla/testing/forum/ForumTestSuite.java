@@ -5,16 +5,6 @@ import org.junit.*;
 
 
 public class ForumTestSuite {
-    @Before
-    public void before() {
-        System.out.println("Test Case: begin");
-    }
-
-    @After
-    public void after() {
-        System.out.println("Test Case: end");
-    }
-
     @BeforeClass
     public static void beforeClass() {
         System.out.println("Test Suite: begin");
@@ -25,6 +15,15 @@ public class ForumTestSuite {
         System.out.println("Test Suite: end");
     }
 
+    @Before
+    public void before() {
+        System.out.println("Test Case: begin");
+    }
+
+    @After
+    public void after() {
+        System.out.println("Test Case: end");
+    }
 
     @Test
     public void testCaseUsername() {

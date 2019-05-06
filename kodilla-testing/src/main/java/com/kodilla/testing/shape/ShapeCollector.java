@@ -9,20 +9,20 @@ public class ShapeCollector {
         return shapes;
     }
 
-    public void addFigure(Shape shape){
+    public void addFigure(Shape shape) {
         shapes.add(shape);
     }
 
-    public void removeFigure(Shape shape){
+    public void removeFigure(Shape shape) {
         shapes.remove(shape);
     }
 
-    public Shape getFigure(int n){
+    public Shape getFigure(int n) {
         return shapes.get(n);
     }
 
-    public void showFigures(){
-        for(Shape shape : shapes){
+    public void showFigures() {
+        for (Shape shape : shapes) {
             System.out.println(shape);
         }
     }

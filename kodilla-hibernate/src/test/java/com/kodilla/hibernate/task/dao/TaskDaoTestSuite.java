@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class TaskDaoTestSuite {
     @Test
     public void testTaskDaoSave() {
         //Given
-        Task task = new Task(DESCRIPTION,7);
+        Task task = new Task(DESCRIPTION, 7);
 
         //When
         taskDao.save(task);
@@ -41,9 +40,9 @@ public class TaskDaoTestSuite {
     }
 
     @Test
-    public void testTaskDaoFindByDuration(){
+    public void testTaskDaoFindByDuration() {
         //Given
-        Task task = new Task(DESCRIPTION,7);
+        Task task = new Task(DESCRIPTION, 7);
         taskDao.save(task);
         int duration = task.getDuration();
 
@@ -51,7 +50,7 @@ public class TaskDaoTestSuite {
         List<Task> readTasks = taskDao.findByDuration(duration);
 
         //Then
-        Assert.assertEquals(1,readTasks.size());
+        Assert.assertEquals(1, readTasks.size());
 
         //CleanUp
         int id = readTasks.get(0).getId();
@@ -60,9 +59,9 @@ public class TaskDaoTestSuite {
 
 
     @Test
-    public void testTaskDaoSaveWithFinancialDetails(){
+    public void testTaskDaoSaveWithFinancialDetails() {
         //Given
-        Task task = new Task(DESCRIPTION,7);
+        Task task = new Task(DESCRIPTION, 7);
         task.setTaskFinancialDetails(new TaskFinancialDetails(new BigDecimal(120), false));
 
         //When
@@ -70,7 +69,7 @@ public class TaskDaoTestSuite {
         int id = task.getId();
 
         //Then
-        Assert.assertEquals(0,id);
+        Assert.assertEquals(0, id);
 
        /* //CleanUp
         taskDao.delete(id);*/

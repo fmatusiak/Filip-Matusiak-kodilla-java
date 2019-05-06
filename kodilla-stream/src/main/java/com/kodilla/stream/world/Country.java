@@ -1,7 +1,6 @@
 package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 
 public final class Country {
     private String countryName;

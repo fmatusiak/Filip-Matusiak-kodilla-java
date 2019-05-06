@@ -26,7 +26,7 @@ public class WatcherLogger {
     }
 
     @AfterReturning("execution(* com.kodilla.patterns2.fascade.api.OrderFacade.processOrder(..))")
-    public void showfinishExecuteMethodProcessOrderAfterReturning(){
+    public void showfinishExecuteMethodProcessOrderAfterReturning() {
         LOGGER.info("Successful");
     }
 

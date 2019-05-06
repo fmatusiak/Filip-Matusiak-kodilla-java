@@ -62,7 +62,7 @@ public class CalculatorTestSuite {
     }
 
     @Test
-    public void testFactorial(){
+    public void testFactorial() {
         //Given
         //When
         BigDecimal result = calculator.factorial(new BigDecimal("1000"));

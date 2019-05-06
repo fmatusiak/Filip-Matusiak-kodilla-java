@@ -1,8 +1,8 @@
 package com.kodilla.patterns.strategy;
 
+import com.kodilla.patterns.strategy.predictors.AggresivePredictor;
 import org.junit.Assert;
 import org.junit.Test;
-import com.kodilla.patterns.strategy.predictors.AggresivePredictor;
 
 public class CustomerTestSuite {
 

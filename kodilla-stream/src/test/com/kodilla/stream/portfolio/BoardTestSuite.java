@@ -3,7 +3,6 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -165,9 +164,9 @@ public class BoardTestSuite {
                 .map(LocalDate -> LocalDate.until(java.time.LocalDate.now(), ChronoUnit.DAYS))
                 .reduce(0L, (sum, tmpValue) -> sum = sum + tmpValue);
 
-        double average = countDays/countTasks;
+        double average = countDays / countTasks;
 
-        Assert.assertEquals(10,average,0.01);
+        Assert.assertEquals(10, average, 0.01);
 
 
     }

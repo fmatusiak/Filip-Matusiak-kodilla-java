@@ -4,7 +4,7 @@ public class Mentor implements ObserverMentor {
     private String name;
     private int countTask;
 
-    public Mentor(String name){
+    public Mentor(String name) {
         this.name = name;
     }
 

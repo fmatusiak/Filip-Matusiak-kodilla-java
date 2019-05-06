@@ -26,7 +26,7 @@ public class CompanyDaoTestSuite {
     EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -72,7 +72,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void testQueryManyToMany(){
+    public void testQueryManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -102,12 +102,12 @@ public class CompanyDaoTestSuite {
         List<Employee> listsEmployees = employeeDao.findForSurname("Clarckson");
         List<Company> listsCompany = companyDao.findCompanyForParameter("Gre");
 
-        for(Company company: listsCompany){
+        for (Company company : listsCompany) {
             System.out.println(company.getName());
         }
 
         //Then
-        Assert.assertEquals(1,listsEmployees.size());
-        Assert.assertEquals(1,listsCompany.size());
+        Assert.assertEquals(1, listsEmployees.size());
+        Assert.assertEquals(1, listsCompany.size());
     }
 }

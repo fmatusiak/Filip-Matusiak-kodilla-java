@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.spring.portfolio.BoardTestSuite" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-01-29T20:29:02" hostname="elliot" time="0.044">
-  <properties/>
-  <testcase name="testTaskAdd" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.011"/>
-  <testcase name="testToDoList" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.01"/>
-  <testcase name="testInProgressList" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.01"/>
-  <testcase name="testDoneList" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.01"/>
-  <system-out><![CDATA[2019-01-29 21:29:02.886  INFO 5468 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.spring.portfolio.BoardTestSuite], using SpringBootContextLoader
+<testsuite name="com.kodilla.spring.portfolio.BoardTestSuite" tests="4" skipped="0" failures="0" errors="0"
+           timestamp="2019-01-29T20:29:02" hostname="elliot" time="0.044">
+    <properties/>
+    <testcase name="testTaskAdd" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.011"/>
+    <testcase name="testToDoList" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.01"/>
+    <testcase name="testInProgressList" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.01"/>
+    <testcase name="testDoneList" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.01"/>
+    <system-out><![CDATA[2019-01-29 21:29:02.886  INFO 5468 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kodilla.spring.portfolio.BoardTestSuite], using SpringBootContextLoader
 2019-01-29 21:29:02.886  INFO 5468 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kodilla.spring.portfolio.BoardTestSuite]: no resource found for suffixes {-context.xml, Context.groovy}.
 2019-01-29 21:29:02.886  INFO 5468 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kodilla.spring.portfolio.BoardTestSuite]: BoardTestSuite does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 2019-01-29 21:29:02.891  INFO 5468 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kodilla.spring.portfolio.BoardConfig for test class com.kodilla.spring.portfolio.BoardTestSuite
@@ -24,5 +25,5 @@
 2019-01-29 21:29:02.915  INFO 5468 --- [    Test worker] c.k.spring.portfolio.BoardTestSuite      : No active profile set, falling back to default profiles: default
 2019-01-29 21:29:02.938  INFO 5468 --- [    Test worker] c.k.spring.portfolio.BoardTestSuite      : Started BoardTestSuite in 0.042 seconds (JVM running for 3.156)
 ]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+    <system-err><![CDATA[]]></system-err>
 </testsuite>

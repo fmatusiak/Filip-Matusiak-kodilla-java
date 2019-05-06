@@ -9,23 +9,23 @@ import java.util.Random;
 public class ShapesFactory {
 
     @Bean
-    public Square createSquare(){
+    public Square createSquare() {
         return new Square();
     }
 
     @Bean
-    public Shape chosenShape(){
-        
+    public Shape chosenShape() {
+
         Shape theShape = null;
         Random generator = new Random();
 
         int choosen = generator.nextInt(3);
 
-        if(choosen == 0){
+        if (choosen == 0) {
             theShape = new Triangle();
-        } else if(choosen == 1){
+        } else if (choosen == 1) {
             theShape = new Circle();
-        } else if(choosen == 2){
+        } else if (choosen == 2) {
             theShape = new Square();
         }
         return theShape;

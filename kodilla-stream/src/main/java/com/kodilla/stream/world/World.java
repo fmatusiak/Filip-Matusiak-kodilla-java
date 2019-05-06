@@ -2,8 +2,6 @@ package com.kodilla.stream.world;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 public final class World {
     private ArrayList<Continent> continents = new ArrayList<>();
@@ -12,11 +10,11 @@ public final class World {
         return continents;
     }
 
-    public void addContinent(Continent continent){
+    public void addContinent(Continent continent) {
         continents.add(continent);
     }
 
-    public void addContinentList(ArrayList<Continent> continent){
+    public void addContinentList(ArrayList<Continent> continent) {
         this.continents = continent;
     }
 

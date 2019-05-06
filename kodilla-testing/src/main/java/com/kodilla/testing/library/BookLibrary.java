@@ -20,11 +20,11 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 
-    public int returnBooks(LibraryUser libraryUser){
+    public int returnBooks(LibraryUser libraryUser) {
         return libraryDatabase.listBooksInHandsOf(libraryUser).size();
     }
 

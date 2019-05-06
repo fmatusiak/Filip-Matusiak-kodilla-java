@@ -1,4 +1,5 @@
 package com.kodilla.hibernate.manytomany;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class Company {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }
@@ -45,14 +46,14 @@ public class Company {
         return id;
     }
 
+    private void setId(int id) {
+        this.id = id;
+    }
+
     @NotNull
     @Column(name = "COMPANY_NAME")
     public String getName() {
         return name;
-    }
-
-    private void setId(int id) {
-        this.id = id;
     }
 
     private void setName(String name) {

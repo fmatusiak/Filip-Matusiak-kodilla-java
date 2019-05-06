@@ -10,18 +10,18 @@ import static org.junit.Assert.assertEquals;
 
 public class MedianAdapterTestSuite {
     @Test
-    public void publicationYearMedianTest(){
+    public void publicationYearMedianTest() {
         //Given
         Set<Book> books = new HashSet<>();
-        books.add(new Book("Edward Acki","Punisher",998,"edwardo"));
-        books.add(new Book("Michal Zadlo","Krol Hiphopu",1721,"hiphop"));
-        books.add(new Book("Darek Maciborek","Kolanko mix",2010,"maxTv"));
+        books.add(new Book("Edward Acki", "Punisher", 998, "edwardo"));
+        books.add(new Book("Michal Zadlo", "Krol Hiphopu", 1721, "hiphop"));
+        books.add(new Book("Darek Maciborek", "Kolanko mix", 2010, "maxTv"));
         MedianAdapter medianAdapter = new MedianAdapter();
 
         //When
         int result = medianAdapter.publicationYearMedian(books);
 
         //Then
-        assertEquals(1721,result);
+        assertEquals(1721, result);
     }
 }

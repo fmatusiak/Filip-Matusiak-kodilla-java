@@ -1,9 +1,6 @@
 package com.kodilla.spring;
 
-import com.kodilla.spring.shape.Circle;
 import com.kodilla.spring.shape.Shape;
-import com.kodilla.spring.shape.Square;
-import com.kodilla.spring.shape.Triangle;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,10 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SpringRunnerTestSuite {
 
     @Test
-    public void testCircleLoadedIntoContainer(){
+    public void testCircleLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("circle");
+        Shape shape = (Shape) context.getBean("circle");
 
         //When
         String name = shape.getShapeName();
@@ -31,10 +28,10 @@ public class SpringRunnerTestSuite {
     }
 
     @Test
-    public void testTriangleLoadedIntoContainer(){
+    public void testTriangleLoadedIntoContainer() {
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("triangle");
+        Shape shape = (Shape) context.getBean("triangle");
 
         //When
         String name = shape.getShapeName();
@@ -48,7 +45,7 @@ public class SpringRunnerTestSuite {
 
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("createSquare");
+        Shape shape = (Shape) context.getBean("createSquare");
 
         //When
         String name = shape.getShapeName();
@@ -58,11 +55,11 @@ public class SpringRunnerTestSuite {
     }
 
     @Test
-    public void testShapeLoadedIntoContainer(){
+    public void testShapeLoadedIntoContainer() {
 
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        Shape shape = (Shape)context.getBean("chosenShape");
+        Shape shape = (Shape) context.getBean("chosenShape");
 
         //When
         String name = shape.getShapeName();

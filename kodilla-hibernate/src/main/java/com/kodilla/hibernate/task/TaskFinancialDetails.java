@@ -11,11 +11,11 @@ public class TaskFinancialDetails {
     private BigDecimal price;
     private boolean paid;
 
-    public TaskFinancialDetails(){
+    public TaskFinancialDetails() {
 
     }
 
-    public TaskFinancialDetails(BigDecimal price, boolean paid){
+    public TaskFinancialDetails(BigDecimal price, boolean paid) {
         this.price = price;
         this.paid = paid;
     }
@@ -28,9 +28,17 @@ public class TaskFinancialDetails {
         return id;
     }
 
+    private void setId(int id) {
+        this.id = id;
+    }
+
     @Column(name = "PRICE")
     public BigDecimal getPrice() {
         return price;
+    }
+
+    private void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Column(name = "PAID")
@@ -38,15 +46,7 @@ public class TaskFinancialDetails {
         return paid;
     }
 
-    private void setId(int id) {
-        this.id = id;
-    }
-
-    private void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    private void setPaid(boolean paid){
+    private void setPaid(boolean paid) {
         this.paid = paid;
     }
 }

@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ShapeFactoryTestSuite {
-    
+
     @Test
     public void testFactoryCircle() {
         //Given
