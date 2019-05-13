@@ -6,16 +6,16 @@ import org.junit.Test;
 public class testLoopAndConditionalBreakpoints {
 
     @Test
-    public void testLoop(){
+    public void testLoop() {
         //given
         long sum = 0;
         //when
-        for(int i = 0; i < 1000;i++){
-            sum+=i;
+        for (int i = 0; i < 1000; i++) {
+            sum += i;
             System.out.println("[" + i + "]" + sum);
         }
         //then
-        Assert.assertEquals(499500,sum);
+        Assert.assertEquals(499500, sum);
     }
 
 }

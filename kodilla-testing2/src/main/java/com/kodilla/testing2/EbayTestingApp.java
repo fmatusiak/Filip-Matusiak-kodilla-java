@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class EbayTestingApp {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         WebDriver webDriver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
         webDriver.get("https://www.ebay.com/");
 
